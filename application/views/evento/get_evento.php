@@ -105,6 +105,8 @@ if ($evento){
 								<tr>
 									<th><?= $evento_tipo_entrada_rules[IDEVETE]['label']; ?></th>
 									<th><?= $evento_tipo_entrada_rules[DESCRIPCION]['label']; ?></th>
+									<th><?= $evento_tipo_entrada_rules[PRECIO]['label']; ?></th>
+									<th><?= $evento_tipo_entrada_rules[CANTIDAD]['label']; ?></th>
 									<th colspan="2"></th>
 								</tr>
 							</thead>
@@ -116,6 +118,8 @@ if ($evento){
 								<tr>
 									<td><?= $evento_tipo_entrada_row->idevete; ?></td>
 									<td><?= $evento_tipo_entrada_row->descripcion; ?></td>
+									<td><?= $evento_tipo_entrada_row->precio; ?></td>
+									<td><?= $evento_tipo_entrada_row->cantidad; ?></td>									
 									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_EDIT."/".$evento_tipo_entrada_row->idevete; ?>" class="btn btn-success btn-xs"><i class="fa fa-edit fa-fw"></i><strong>EDITAR</strong></a></td>
 									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_DEL."/".$evento_tipo_entrada_row->idevete; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
 								</tr>

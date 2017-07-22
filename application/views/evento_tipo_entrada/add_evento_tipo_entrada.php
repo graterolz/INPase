@@ -92,7 +92,19 @@ if ($evento){
 			'name' => DESCRIPCION,
 			'placeholder' => $evento_tipo_entrada_rules[DESCRIPCION]['label'],
 			'required' => TRUE
-		)
+		),
+		PRECIO => array(
+			'class' => 'form-control',
+			'name' => PRECIO,
+			'placeholder' => $evento_tipo_entrada_rules[PRECIO]['label'],
+			'required' => TRUE
+		),
+		CANTIDAD => array(
+			'class' => 'form-control',
+			'name' => CANTIDAD,
+			'placeholder' => $evento_tipo_entrada_rules[CANTIDAD]['label'],
+			'required' => TRUE
+		),		
 	);
 ?>
 			<?= form_open('',$form_attributes);?>
@@ -115,10 +127,18 @@ if ($evento){
 							<div class="col-lg-12">
 								<div class="form-group">
 									<div class="row">
-										<div class="col-lg-12">
+										<div class="col-lg-4">
 											<?= form_label($evento_tipo_entrada_rules[DESCRIPCION]['label']);?>
 											<?= form_input($tipo_evento_form[DESCRIPCION]); ?>
 										</div>
+										<div class="col-lg-4">
+											<?= form_label($evento_tipo_entrada_rules[PRECIO]['label']);?>
+											<?= form_input($tipo_evento_form[PRECIO]); ?>
+										</div>
+										<div class="col-lg-4">
+											<?= form_label($evento_tipo_entrada_rules[CANTIDAD]['label']);?>
+											<?= form_input($tipo_evento_form[CANTIDAD]); ?>
+										</div>										
 									</div>
 								</div>
 							</div>

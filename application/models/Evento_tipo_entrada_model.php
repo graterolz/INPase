@@ -27,6 +27,8 @@ class Evento_tipo_entrada_model extends CI_Model{
 			IDEVETE => NULL,
 			IDEVE => $data[IDEVE],
 			DESCRIPCION => $data[DESCRIPCION],
+			PRECIO => $data[PRECIO],
+			CANTIDAD => $data[CANTIDAD],
 			FECHA_REGISTRO => date(FORMATO_FECHA),
 			FECHA_EDICION => date(FORMATO_FECHA),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
@@ -39,6 +41,8 @@ class Evento_tipo_entrada_model extends CI_Model{
 	function edit($idevete,$data){
 		$data=array(
 			DESCRIPCION => $data[DESCRIPCION],
+			PRECIO => $data[PRECIO],
+			CANTIDAD => $data[CANTIDAD],
 			FECHA_EDICION => date(FORMATO_FECHA)
 		);		
 		$this->db->where(IDEVETE,$idevete);
@@ -69,6 +73,18 @@ class Evento_tipo_entrada_model extends CI_Model{
 			'for' => DESCRIPCION,
 			'label' => 'Tipo de Entrada',
 			'rules' => 'trim|required'
-		)	
+		),
+		PRECIO => array(
+			'field' => PRECIO,
+			'for' => PRECIO,
+			'label' => 'Precio de Entrada',
+			'rules' => 'trim|required'
+		),
+		CANTIDAD => array(
+			'field' => CANTIDAD,
+			'for' => CANTIDAD,
+			'label' => 'Cantidad de Entradas',
+			'rules' => 'trim|required'
+		),
 	);
 }

@@ -41,7 +41,9 @@ class Evento_tipo_entrada extends CI_Controller {
 		if ($this->form_validation->run() == TRUE) {
 			$data = array(
 				IDEVE => $ideve,
-				DESCRIPCION => $this->input->post(DESCRIPCION)
+				DESCRIPCION => $this->input->post(DESCRIPCION),
+				PRECIO => $this->input->post(PRECIO),
+				CANTIDAD => $this->input->post(CANTIDAD)
 			);
 
 			$this->Evento_tipo_entrada_model->add($data);
@@ -80,7 +82,9 @@ class Evento_tipo_entrada extends CI_Controller {
 
 		if ($this->form_validation->run() == TRUE) {
 			$data = array(
-				DESCRIPCION => $this->input->post(DESCRIPCION)
+				DESCRIPCION => $this->input->post(DESCRIPCION),
+				PRECIO => $this->input->post(PRECIO),
+				CANTIDAD => $this->input->post(CANTIDAD)
 			);
 
 			$this->Evento_tipo_entrada_model->edit($idevete,$data);

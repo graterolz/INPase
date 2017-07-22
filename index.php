@@ -110,6 +110,8 @@ define ('IDEVEVE','ideveve');
 // Campos Tabla EVENTO_TIPO_ENTRADA
 define ('IDEVETE','idevete');
 define ('DESCRIPCION','descripcion');
+define ('PRECIO','precio');
+define ('CANTIDAD','cantidad');
 
 // Campos Tabla EVENTO_TIPO_ENTRADA_VENDEDOR
 define ('IDEVETEVE','ideveteve');

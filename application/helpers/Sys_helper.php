@@ -1,4 +1,5 @@
 <?php
+/*
 // Print array result - database
 function my_form_dropdown($name, $result_array, $extras){
     $options = array(
@@ -19,4 +20,5 @@ function my_form_dropdown($name, $result_array, $extras){
 
     return form_dropdown($name, $options, NULL, $extras);
 }
+*/
 ?>
