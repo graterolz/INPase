@@ -101,6 +101,7 @@ define ('URL_FOTO','url_foto');
 // Campos Tabla EVENTO
 define ('IDEVE','ideve');
 define ('IDPROD','idprod');
+define ('LUGAR','lugar');
 define ('FECHA','fecha');
 define ('LIMITE_EMISION','limite_emision');
 

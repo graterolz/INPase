@@ -85,6 +85,7 @@ class Evento extends CI_Controller {
 		if ($this->form_validation->run() == TRUE) {
 			$data = array(
 				NOMBRE => $this->input->post(NOMBRE),
+				LUGAR => $this->input->post(LUGAR),
 				FECHA => $this->input->post(FECHA),
 				LIMITE_EMISION => $this->input->post(LIMITE_EMISION)
 			);
@@ -124,6 +125,7 @@ class Evento extends CI_Controller {
 		if ($this->form_validation->run() == TRUE) {
 			$data = array(
 				NOMBRE => $this->input->post(NOMBRE),
+				LUGAR => $this->input->post(LUGAR),
 				FECHA => $this->input->post(FECHA),
 				LIMITE_EMISION => $this->input->post(LIMITE_EMISION)
 			);

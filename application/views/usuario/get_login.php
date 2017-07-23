@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								-->
 								<!-- Change this to a button or input when using this as a form -->
 								<input type="submit" class="btn btn-lg btn-primary btn-block" value="Login">
-								<a href="<?= base_url(PATH_MENU)."/". USUARIO_REGISTER; ?>" class="btn btn-lg btn-success btn-block">Registro</a>
+								<a href="<?= base_url(PATH_MENU)."/". USUARIO_REGISTER; ?>" class="btn btn-lg btn-success btn-block disabled">Registro</a>
 							</fieldset>
 						<?= form_close() ?>
 					</div>

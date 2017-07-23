@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `evento` (
 	`ideve` int(10) AUTO_INCREMENT NOT NULL,
 	`idprod` int(10) NOT NULL,
 	`nombre` varchar(50) NOT NULL,
-	/*`lugar` varchar(50) NOT NULL,*/
+	`lugar` varchar(50) NOT NULL,
 	`fecha` datetime  NOT NULL,	
 	`limite_emision` int(10) NOT NULL,
 	`fecha_registro` datetime NOT NULL,
@@ -82,10 +82,10 @@ CREATE TABLE IF NOT EXISTS `evento` (
 	PRIMARY KEY (`ideve`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 INSERT INTO `evento`
-(`ideve`, `idprod`, `nombre`, `fecha`, `limite_emision`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
-(NULL, 1, 'Evento 1', NOW(), 24, NOW(), NOW(), 1),
-(NULL, 1, 'Evento 2', NOW(), 24, NOW(), NOW(), 1),
-(NULL, 1, 'Evento 3', NOW(), 24, NOW(), NOW(), 1);
+(`ideve`, `idprod`, `nombre`, `lugar`, `fecha`, `limite_emision`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
+(NULL, 1, 'Evento 1', 'Centro', NOW(), 24, NOW(), NOW(), 1),
+(NULL, 1, 'Evento 2', 'Centro', NOW(), 24, NOW(), NOW(), 1),
+(NULL, 1, 'Evento 3', 'Centro', NOW(), 24, NOW(), NOW(), 1);
 
 -- vendedor_evento
 DROP TABLE IF EXISTS `evento_vendedor`;

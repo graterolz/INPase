@@ -27,6 +27,7 @@ class Evento_model extends CI_Model{
 			IDEVE => NULL,
 			IDPROD => 1,
 			NOMBRE => $data[NOMBRE],
+			LUGAR => $data[LUGAR],
 			FECHA => $data[FECHA],
 			LIMITE_EMISION => $data[LIMITE_EMISION],
 			FECHA_REGISTRO => date(FORMATO_FECHA),
@@ -41,6 +42,7 @@ class Evento_model extends CI_Model{
 	function edit($ideve,$data){
 		$data=array(
 			NOMBRE => $data[NOMBRE],
+			LUGAR => $data[LUGAR],
 			FECHA => $data[FECHA],
 			LIMITE_EMISION => $data[LIMITE_EMISION],
 			FECHA_EDICION => date(FORMATO_FECHA)
@@ -72,6 +74,12 @@ class Evento_model extends CI_Model{
 			'field' => NOMBRE,
 			'for' => NOMBRE,
 			'label' => 'Nombre del evento',
+			'rules' => 'trim|required'
+		),
+		LUGAR => array(
+			'field' => LUGAR,
+			'for' => LUGAR,
+			'label' => 'Lugar del evento',
 			'rules' => 'trim|required'
 		),
 		FECHA => array(

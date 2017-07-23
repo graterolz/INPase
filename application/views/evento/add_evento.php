@@ -17,6 +17,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'placeholder' => $evento_rules[NOMBRE]['label'],
 			'required' => TRUE
 		),
+		LUGAR => array(
+			'class' => 'form-control',
+			'name' => LUGAR,
+			'placeholder' => $evento_rules[LUGAR]['label'],
+			'required' => TRUE
+		),		
 		FECHA => array(
 			'class' => 'form-control',
 			'name' => FECHA,
@@ -54,6 +60,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										<div class="col-lg-12">
 											<?= form_label($evento_rules[NOMBRE]['label']);?>
 											<?= form_input($evento_form[NOMBRE]); ?>
+											<br>
+										</div>
+										<div class="col-lg-12">
+											<?= form_label($evento_rules[LUGAR]['label']);?>
+											<?= form_input($evento_form[LUGAR]); ?>
 											<br>
 										</div>
 										<div class="col-lg-12">
