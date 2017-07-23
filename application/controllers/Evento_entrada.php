@@ -77,13 +77,23 @@ class Evento_entrada extends CI_Controller {
 	}
 
 	//
-	public function search(){
+	public function search($ideveve = NULL){
 		if(!$this->session->userdata(IDUSU_SESSION)){
 			redirect(USUARIO_LOGIN, 'refresh');
 		}
+		if($ideveve == NULL){
+			redirect(EVENTO_CONTROLLER, 'refresh');
+		}		
 		if($this->session->userdata(IDROL_SESSION)!=PORT){
 			redirect(USUARIO_CONTROLLER, 'refresh');
 		}
+
+		$ideve = $this->Evento_vendedor_model->get($ideveve)->row()->ideve;
+		$data['evento'] = $this->Evento_model->get($ideve);
+		$data['evento_tipo_entrada'] =
+
+
+		$data['evento_rules'] = $this->Evento_model->evento_rules;
 
 		$rules = $this->Evento_entrada_model->evento_entrada_rules_search;
 		$this->form_validation->set_rules($rules);
@@ -92,7 +102,10 @@ class Evento_entrada extends CI_Controller {
 
 		if ($this->form_validation->run() == TRUE) {
 			$ident = $this->input->post(IDENT);
-			$data['evento_entrada'] = $this->Evento_entrada_model->get($ident);
+
+
+			//$data['evento_entrada'] = $this->Evento_entrada_model->get($ident);
+			$data['evento_entrada'] = $this->Sys_model->searchEntrada($ident,$ideve);
 
 			if ($data['evento_entrada']){
 				$ideveteve = $data['evento_entrada']->row()->ideveteve;

@@ -23,6 +23,7 @@ INSERT INTO `productora`
 (`idprod`, `nombre_emp`, `direccion`, `telefono_emp`, `web`, `email_emp`, `nombre_resp`, `email_resp`, `telefono_resp`, `user`, `pass`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
 (NULL, 'Empresa 1', 'empresa1@inpase.com', '999999999', 'S/I', 'S/I', 'Emilio Graterol', 'ejgraterolz@gmail.com', '999999999', 'admin', 'admin', NOW(), NOW(), 1);
 */
+
 -- usuario
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -48,6 +49,7 @@ INSERT INTO `usuario`
 DROP TABLE IF EXISTS `usuario_vendedor`;
 CREATE TABLE IF NOT EXISTS `usuario_vendedor` (
 	`idusu` int(10) NOT NULL,
+	`idrol` varchar(4) NOT NULL,
 	`nombre` varchar(50) NOT NULL,
 	`apellido` varchar(50) NOT NULL,
 	`telefono` varchar(50) NOT NULL,
@@ -62,10 +64,15 @@ CREATE TABLE IF NOT EXISTS `usuario_vendedor` (
 	PRIMARY KEY (`idusu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 INSERT INTO `usuario_vendedor`
-(`idusu`, `nombre`, `apellido`, `telefono`, `direccion`, `email`, `facebook`, `twitter`, `url_foto`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
-(3, 'Vendedor', '1', '999999999', 'Direccion 1.', 'vendedor1@inpase.com', '@vendedor1', '@vendedor1', '.', NOW(), NOW(), 1),
-(5, 'Vendedor', '2', '999999999', 'Direccion 1.', 'vendedor2@inpase.com', '@vendedor2', '@vendedor2', '.', NOW(), NOW(), 1),
-(6, 'Vendedor', '3', '999999999', 'Direccion 1.', 'vendedor3@inpase.com', '@vendedor3', '@vendedor3', '.', NOW(), NOW(), 1);
+(`idusu`, `idrol`, `nombre`, `apellido`, `telefono`, `direccion`, `email`, `facebook`, `twitter`, `url_foto`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
+(3, 'VEND', 'Vendedor', '1', '999999999', 'Direccion 1.', 'vendedor1@inpase.com', '@vendedor1', '@vendedor1', '.', NOW(), NOW(), 1),
+(5, 'VEND', 'Vendedor', '2', '999999999', 'Direccion 1.', 'vendedor2@inpase.com', '@vendedor2', '@vendedor2', '.', NOW(), NOW(), 1),
+(6, 'VEND', 'Vendedor', '3', '999999999', 'Direccion 1.', 'vendedor3@inpase.com', '@vendedor3', '@vendedor3', '.', NOW(), NOW(), 1),
+(4, 'PORT', 'Portero', '#1', '999999999', 'Direccion 1.', 'portero1@inpase.com', '@portero1', '@portero1', '.', NOW(), NOW(), 1);
+
+-- Constraints
+-- ALTER TABLE `usuario_vendedor` DROP FOREIGN KEY `usuario_fk`;
+-- ALTER TABLE `usuario_vendedor` ADD CONSTRAINT `usuario_fk` FOREIGN KEY (`idusu`) REFERENCES `usuario` (`idusu`) ON DELETE CASCADE ON UPDATE CASCADE; 
 
 -- evento
 DROP TABLE IF EXISTS `evento`;
@@ -102,26 +109,23 @@ INSERT INTO `evento_vendedor`
 (`ideveve`, `ideve`, `idusu`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
 (NULL, 1, 3, NOW(), NOW(), 1),
 (NULL, 2, 3, NOW(), NOW(), 1),
-(NULL, 1, 5, NOW(), NOW(), 1);
+(NULL, 1, 5, NOW(), NOW(), 1),
+(NULL, 1, 4, NOW(), NOW(), 1);
 
--- portero_evento
-/*
-DROP TABLE IF EXISTS `portero_evento`;
-CREATE TABLE IF NOT EXISTS `portero_evento` (
+-- evento_portero
+/*DROP TABLE IF EXISTS `evento_portero`;
+CREATE TABLE IF NOT EXISTS `evento_portero` (
 	`idevepo` int(10) AUTO_INCREMENT NOT NULL,
 	`ideve` int(10) NOT NULL,
 	`idusu` int(10) NOT NULL,
 	`fecha_registro` datetime NOT NULL,
 	`fecha_edicion` datetime NOT NULL,
 	`estado_registro` int(1) NOT NULL,
-	PRIMARY KEY (`ideveve`)
+	PRIMARY KEY (`idevepo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-INSERT INTO `portero_evento`
-(`ideveve`, `ideve`, `idusu`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
-(NULL, 1, 3, NOW(), NOW(), 1),
-(NULL, 2, 3, NOW(), NOW(), 1),
-(NULL, 1, 5, NOW(), NOW(), 1);
-*/
+INSERT INTO `evento_portero`
+(`idevepo`, `ideve`, `idusu`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
+(NULL, 1, 4, NOW(), NOW(), 1);*/
 
 -- evento_tipo_entrada
 DROP TABLE IF EXISTS `evento_tipo_entrada`;

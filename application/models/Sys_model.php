@@ -52,19 +52,20 @@ class Sys_model extends CI_Model{
 
 	// Obtiene informacion de usuario vendedores asociada a un evento
 	function getUsuarioVendedorByEvento($ideve){
-		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.IDEVE,$ideve);
 		$this->db->select(
 			TABLA_EVENTO_VENDEDOR.'.'.IDEVEVE.','.
 			TABLA_USUARIO_VENDEDOR.'.'.NOMBRE.','.
 			TABLA_USUARIO_VENDEDOR.'.'.APELLIDO.','.
 			TABLA_USUARIO_VENDEDOR.'.'.EMAIL
 		);
+		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.IDEVE,$ideve);
 		$this->db->from(TABLA_EVENTO_VENDEDOR);
 		$this->db->join(
 			TABLA_USUARIO_VENDEDOR,
 			TABLA_USUARIO_VENDEDOR.'.'.IDUSU.'='.TABLA_EVENTO_VENDEDOR.'.'.IDUSU,
 			'INNER'
 		);
+		$this->db->where(TABLA_USUARIO_VENDEDOR.'.'.IDROL,VEND);
 		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->order_by(1,'ASC');
 		$query=$this->db->get();
@@ -123,6 +124,7 @@ class Sys_model extends CI_Model{
 			$data[]=0;
 		}
 		//var_dump($data);
+		
 		$this->db->select(
 			TABLA_USUARIO_VENDEDOR.'.'.IDUSU.','.
 			TABLA_USUARIO_VENDEDOR.'.'.NOMBRE.','.
@@ -130,6 +132,7 @@ class Sys_model extends CI_Model{
 			TABLA_USUARIO_VENDEDOR.'.'.EMAIL
 		);
 		$this->db->from(TABLA_USUARIO_VENDEDOR);
+		$this->db->where(TABLA_USUARIO_VENDEDOR.'.'.IDROL,VEND);
 		$this->db->where(TABLA_USUARIO_VENDEDOR.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->where_not_in(IDUSU, $data);
 		$query=$this->db->get();
@@ -171,8 +174,8 @@ class Sys_model extends CI_Model{
 			//return false;
 			$data[]=0;
 		}
-		
 		//var_dump($data);
+
 		$this->db->select(
 			TABLA_EVENTO_TIPO_ENTRADA.'.'.IDEVETE.','.
 			TABLA_EVENTO_TIPO_ENTRADA.'.'.DESCRIPCION
@@ -252,13 +255,10 @@ class Sys_model extends CI_Model{
 		}
 		//var_dump($data);
 
-		$this->db->select(TABLA_EVENTO_ENTRADA.'.*');
-		$this->db->from(TABLA_EVENTO_ENTRADA);
 		$this->db->where(TABLA_EVENTO_ENTRADA.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->where_in(IDEVETEVE, $data);
-		$query=$this->db->get();
+		$query=$this->db->get(TABLA_EVENTO_ENTRADA);
 		//echo $this->db->last_query();
-		unset($data);
 
 		if($query->num_rows()>0){
 			return $query;
@@ -266,4 +266,40 @@ class Sys_model extends CI_Model{
 			return false;
 		}
 	}
+
+	// Obtiene informacion de entradas asociados a un evento
+	function searchEntrada($ident,$ideve){
+		$this->db->select(
+			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVETEVE
+		);		
+		$this->db->from(TABLA_EVENTO_VENDEDOR);
+		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.IDEVE,$ideve);
+		$this->db->join(
+			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR,
+			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVEVE.'='.TABLA_EVENTO_VENDEDOR.'.'.IDEVEVE,
+			'INNER'
+		);
+		$query=$this->db->get();
+		//echo $this->db->last_query();
+
+		if($query->num_rows()>0){
+			foreach($query->result_array() as $row){
+				$data[]=$row[IDEVETEVE];
+			}
+		}else{
+			$data[]=0;
+		}
+		//var_dump($data);
+
+		$this->db->where(TABLA_EVENTO_ENTRADA.'.'.IDENT,$ident);
+		$this->db->where_in(TABLA_EVENTO_ENTRADA.'.'.IDEVETEVE,$data);
+		$query=$this->db->get(TABLA_EVENTO_ENTRADA);
+		//echo $this->db->last_query();
+
+		if($query->num_rows()>0){
+			return $query;
+		}else{
+			return false;
+		}
+	}	
 }

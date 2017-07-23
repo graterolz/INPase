@@ -18,9 +18,9 @@ class Evento extends CI_Controller {
 		if(!$this->session->userdata(IDUSU_SESSION)){
 			redirect(USUARIO_LOGIN, 'refresh');
 		}
-		if($this->session->userdata(IDROL_SESSION)==PORT){
+		/*if($this->session->userdata(IDROL_SESSION)==PORT){
 			redirect(EVENTO_ENTRADA_SEARCH, 'refresh');
-		}
+		}*/
 		$idusu = $this->session->userdata(IDUSU_SESSION);
 
 		$this->load->view(HEADER);
@@ -38,6 +38,15 @@ class Evento extends CI_Controller {
 			$data['evento_vendedor_rules'] = $this->Evento_vendedor_model->evento_vendedor_rules;
 			$this->load->view(LIST_EVENTO_VEND,$data);
 		}
+		if($this->session->userdata(IDROL_SESSION)==PORT){
+			//redirect(EVENTO_ENTRADA_SEARCH, 'refresh');
+			$data['usuario_vendedor'] = $this->Usuario_vendedor_model->get($idusu);
+			$data['usuario_vendedor_rules'] = $this->Usuario_vendedor_model->usuario_vendedor_rules;
+			$data['evento'] = $this->Sys_model->getEventoByUsuarioVendedor($idusu);
+			$data['evento_rules'] = $this->Evento_model->evento_rules;
+			$data['evento_vendedor_rules'] = $this->Evento_vendedor_model->evento_vendedor_rules;
+			$this->load->view(LIST_EVENTO_PORT,$data);
+		}		
 		$this->load->view(FOOTER);
 	}
 

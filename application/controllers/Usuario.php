@@ -38,7 +38,10 @@ class Usuario extends CI_Controller {
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
 		else if ($this->session->userdata(IDROL_SESSION) == PORT){
-			redirect(EVENTO_ENTRADA_SEARCH, 'refresh');
+			//redirect(EVENTO_ENTRADA_SEARCH, 'refresh');
+			redirect(EVENTO_CONTROLLER, 'refresh');
+		}else{
+			$this->logout();
 		}
 
 		$this->load->view(HEADER);

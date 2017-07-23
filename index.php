@@ -138,7 +138,7 @@ define ('TITULO_EVENTO_ENTRADA','Informacion de Entrada/s');
 
 // Vistas MENU
 define ('MENU_EVENTO','Eventos');
-define ('MENU_ENTRADA_SEARCH','Buscador');
+// define ('MENU_ENTRADA_SEARCH','Buscador');
 define ('MENU_LOGOUT','Logout');
 
 // Vistas USUARIO
@@ -151,6 +151,7 @@ define ('GET_REGISTER','usuario/get_register');
 // Vistas EVENTO
 define ('LIST_EVENTO_ORGA','evento/list_evento_orga');
 define ('LIST_EVENTO_VEND','evento/list_evento_vend');
+define ('LIST_EVENTO_PORT','evento/list_evento_port');
 define ('GET_EVENTO','evento/get_evento');
 define ('ADD_EVENTO','evento/add_evento');
 define ('EDIT_EVENTO','evento/edit_evento');
@@ -162,7 +163,7 @@ define ('GET_EVENTO_VENDEDOR','evento_vendedor/get_evento_vendedor');
 // Vistas EVENTO_ENTRADA
 define ('GETS_EVENTO_ENTRADA','evento_entrada/gets_evento_entrada');
 define ('ADD_EVENTO_ENTRADA','evento_entrada/add_evento_entrada');
-define ('SEARCH_EVENTO_ENTRADA','evento_entrada/search_entrada');
+define ('SEARCH_EVENTO_ENTRADA','evento_entrada/search_evento_entrada');
 
 // Vistas EVENTO_TIPO_ENTRADA
 //define ('LIST_EVENTO_TIPO_ENTRADA','evento_tipo_entrada/list_evento_tipo_entrada');

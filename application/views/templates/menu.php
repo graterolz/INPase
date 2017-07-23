@@ -37,20 +37,20 @@ $idrol = $this->session->userdata(IDROL_SESSION);
 	</li>
 <?php
 }
-if($idrol==VEND){
+if($idrol==VEND || $idrol==PORT){
 ?> 
 	<li>
 		<a href="<?= base_url(PATH_MENU)."/".EVENTO_CONTROLLER; ?>"><i class="fa fa-table fa-fw"></i><?= MENU_EVENTO; ?></a>
 	</li>
 <?php
 }
-if($idrol==PORT){
+/*if($idrol==PORT){
 ?>
 	<li>
 		<a href="<?= base_url(PATH_MENU)."/".EVENTO_ENTRADA_SEARCH; ?>"><i class="fa fa-ticket fa-fw"></i><?= MENU_ENTRADA_SEARCH; ?></a>
 	</li>
 <?php
-}
+}*/
 ?>
 						<li>
 							<a href="<?= base_url(PATH_MENU)."/".USUARIO_LOGOUT; ?>"><i class="fa fa-sign-out fa-fw"></i><?= MENU_LOGOUT; ?></a>

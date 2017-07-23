@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if ($usuario_vendedor){
 	$usuario_vendedor_row = $usuario_vendedor->row();
 
-	$usuario_vendedor_form = array(		
+	$usuario_vendedor_form = array(
 		NOMBRE => array(
 			'class' => 'form-control',
 			'name' => NOMBRE,
@@ -152,7 +152,7 @@ if ($usuario_vendedor){
 									<th><?= $evento_rules[NOMBRE]['label']; ?></th>
 									<th><?= $evento_rules[FECHA]['label']; ?></th>
 									<th><?= $evento_rules[LIMITE_EMISION]['label']; ?></th>
-									<th colspan="2"></th>
+									<th colspan="1"></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -166,8 +166,8 @@ if ($usuario_vendedor){
 									<td><?= $evento_row->nombre; ?></td>
 									<td><?= date("d/m/Y", strtotime($evento_row->fecha)); ?></td>
 									<td><center><?= $evento_row->limite_emision; ?></center></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_ENTRADA_ADD."/".$evento_row->ideveve; ?>" class="btn btn-default btn-xs"><i class="fa fa-search fa-fw"></i><strong>NUEVA ENTRADA</strong></a></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_ENTRADA_GETSS."/".$evento_row->ideveve; ?>" class="btn btn-default btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER ENTRADAS</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_ENTRADA_SEARCH."/".$evento_row->ideveve; ?>" class="btn btn-success btn-xs"><i class="fa fa-ticket fa-fw"></i><strong> BUSCAR ENTRADA</strong></a></td>
+									<!--<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_ENTRADA_GETSS."/".$evento_row->ideveve; ?>" class="btn btn-default btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER ENTRADAS</strong></a></td>-->
 								</tr>
 <?php
 		}
