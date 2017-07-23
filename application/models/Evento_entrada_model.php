@@ -28,8 +28,8 @@ class Evento_entrada_model extends CI_Model{
 			NOMBRE_COMPRADOR => $data[NOMBRE_COMPRADOR],
 			EMAIL_COMPRADOR => $data[EMAIL_COMPRADOR],
 			ESTADO_ENTRADA => ESTADO_ENTRADA_VENDIDA,
-			FECHA_REGISTRO => date(FORMATO_FECHA),
-			FECHA_EDICION => date(FORMATO_FECHA),
+			FECHA_REGISTRO => date(FORMATO_FECHA_SAVE),
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
 		);
 		
@@ -46,7 +46,7 @@ class Evento_entrada_model extends CI_Model{
 	function del($ident){
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);
 		$this->db->where(IDENT,$ident);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);

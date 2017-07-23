@@ -86,10 +86,9 @@ class Evento extends CI_Controller {
 			$data = array(
 				NOMBRE => $this->input->post(NOMBRE),
 				LUGAR => $this->input->post(LUGAR),
-				FECHA => $this->input->post(FECHA),
+				FECHA => date_create($this->input->post(FECHA)),
 				LIMITE_EMISION => $this->input->post(LIMITE_EMISION)
 			);
-
 			$this->Evento_model->add($data);
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
@@ -126,7 +125,7 @@ class Evento extends CI_Controller {
 			$data = array(
 				NOMBRE => $this->input->post(NOMBRE),
 				LUGAR => $this->input->post(LUGAR),
-				FECHA => $this->input->post(FECHA),
+				FECHA => date_create($this->input->post(FECHA)),
 				LIMITE_EMISION => $this->input->post(LIMITE_EMISION)
 			);
 
@@ -152,7 +151,7 @@ class Evento extends CI_Controller {
 		}
 		if($ideve == NULL){
 			redirect(EVENTO_CONTROLLER, 'refresh');
-		}		
+		}
 		if($this->session->userdata(IDROL_SESSION)!=ORGA){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}

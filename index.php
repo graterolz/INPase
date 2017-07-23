@@ -3,6 +3,7 @@
 define ('PATH_MENU','index.php');
 define ('PATH_RESOURCES','resources/startbootstrap-sb-admin-2');
 define ('PATH_RESOURCES2','resources/imgs');
+define ('PATH_RESOURCES3','resources/bower_components');// bootstrap-datepicker-1.6.4-dist
 
 // Variables de SESSION
 define ('IDUSU_SESSION','idusu_inpase');
@@ -178,7 +179,8 @@ define ('VEND','VEND');
 define ('PORT','PORT');
 
 // Formato fecha
-define ('FORMATO_FECHA','Y-m-d H:i:s');
+define ('FORMATO_FECHA_SAVE','Y-m-d H:i:s');
+define ('FORMATO_FECHA_VIEW','d-m-Y H:i');
 
 // Estado de Registros
 define ('ESTADO_REGISTRO_ELIMINADO','0');

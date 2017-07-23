@@ -24,8 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'required' => TRUE
 		),		
 		FECHA => array(
-			'class' => 'form-control',
+			'class' => 'form-control',			
 			'name' => FECHA,
+			'id' => FECHA,
 			'placeholder' => $evento_rules[FECHA]['label'],
 			'required' => TRUE
 		),

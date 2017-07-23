@@ -29,8 +29,8 @@ class Evento_tipo_entrada_model extends CI_Model{
 			DESCRIPCION => $data[DESCRIPCION],
 			PRECIO => $data[PRECIO],
 			CANTIDAD => $data[CANTIDAD],
-			FECHA_REGISTRO => date(FORMATO_FECHA),
-			FECHA_EDICION => date(FORMATO_FECHA),
+			FECHA_REGISTRO => date(FORMATO_FECHA_SAVE),
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
 		);
 		$query=$this->db->insert(TABLA_EVENTO_TIPO_ENTRADA,$data);
@@ -43,7 +43,7 @@ class Evento_tipo_entrada_model extends CI_Model{
 			DESCRIPCION => $data[DESCRIPCION],
 			PRECIO => $data[PRECIO],
 			CANTIDAD => $data[CANTIDAD],
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);		
 		$this->db->where(IDEVETE,$idevete);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
@@ -55,7 +55,7 @@ class Evento_tipo_entrada_model extends CI_Model{
 	function del($idevete){
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);		
 		$this->db->where(IDEVETE,$idevete);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);

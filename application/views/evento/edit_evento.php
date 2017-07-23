@@ -29,10 +29,12 @@ if ($evento){
 			'required' => TRUE
 		),		
 		FECHA => array(
-			'class' => 'form-control',
+			'class' => 'form-control date',
 			'name' => FECHA,
+			'id' => FECHA,
 			'placeholder' => $evento_rules[FECHA]['label'],
-			'value' => date("d/m/Y", strtotime($evento_row->fecha)),
+			//'value' => date("d/m/Y", strtotime($evento_row->fecha)),			
+			'value' => date_format(date_create($evento_row->fecha), FORMATO_FECHA_VIEW),
 			'required' => TRUE
 		),
 		LIMITE_EMISION => array(
@@ -83,11 +85,6 @@ if ($evento){
 										<div class="col-lg-12">
 											<?= form_label($evento_rules[LIMITE_EMISION]['label']); ?>
 											<?= form_dropdown(NULL,$limite_emision,$evento_form[LIMITE_EMISION]['value'],$evento_form[LIMITE_EMISION]); ?>
-											<!--
-											<?= form_input($evento_form[LIMITE_EMISION]); ?>
-											<?= var_dump($limite_emision); ?>
-
-											-->
 											<br>
 										</div>
 									</div>

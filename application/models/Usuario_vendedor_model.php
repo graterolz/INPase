@@ -32,8 +32,8 @@ class Usuario_vendedor_model extends CI_Model{
 			FACEBOOK => $data[FACEBOOK],
 			TWITTER => $data[TWITTER],
 			URL_FOTO => $data[URL_FOTO],
-			FECHA_REGISTRO => date(FORMATO_FECHA),
-			FECHA_EDICION => date(FORMATO_FECHA),
+			FECHA_REGISTRO => date(FORMATO_FECHA_SAVE),
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
 		);		
 		$query=$this->db->insert(TABLA_USUARIO_VENDEDOR,$data);
@@ -51,7 +51,7 @@ class Usuario_vendedor_model extends CI_Model{
 			FACEBOOK => $data[FACEBOOK],
 			TWITTER => $data[TWITTER],
 			URL_FOTO => $data[URL_FOTO],
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);		
 		$this->db->where(IDUSU,$idusu);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
@@ -63,7 +63,7 @@ class Usuario_vendedor_model extends CI_Model{
 	function del($idusu){
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);
 		$this->db->where(IDUSU,$idusu);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);

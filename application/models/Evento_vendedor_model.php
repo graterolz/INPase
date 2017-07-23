@@ -26,8 +26,8 @@ class Evento_vendedor_model extends CI_Model{
 			IDEVEVE => NULL,
 			IDEVE => $data[IDEVE],
 			IDUSU => $data[IDUSU],
-			FECHA_REGISTRO => date(FORMATO_FECHA),
-			FECHA_EDICION => date(FORMATO_FECHA),
+			FECHA_REGISTRO => date(FORMATO_FECHA_SAVE),
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
 		);
 		$query=$this->db->insert(TABLA_EVENTO_VENDEDOR,$data);
@@ -38,7 +38,7 @@ class Evento_vendedor_model extends CI_Model{
 	function edit($ideveve,$data){
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);
 		$this->db->where(IDEVEVE,$ideveve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
@@ -50,7 +50,7 @@ class Evento_vendedor_model extends CI_Model{
 	function del($ideveve){
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);
 		$this->db->where(IDEVEVE,$ideveve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);

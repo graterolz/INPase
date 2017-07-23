@@ -1,0 +1,13 @@
+{
+  "name": "resources",
+  "homepage": "https://github.com/graterolz/INPase",
+  "authors": [
+    "Emilio J. Graterol <ejgraterolz@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47"
+  }
+}

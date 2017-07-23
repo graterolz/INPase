@@ -28,12 +28,12 @@ class Evento_model extends CI_Model{
 			IDPROD => 1,
 			NOMBRE => $data[NOMBRE],
 			LUGAR => $data[LUGAR],
-			FECHA => $data[FECHA],
+			FECHA => date_format($data[FECHA], FORMATO_FECHA_SAVE),
 			LIMITE_EMISION => $data[LIMITE_EMISION],
-			FECHA_REGISTRO => date(FORMATO_FECHA),
-			FECHA_EDICION => date(FORMATO_FECHA),
+			FECHA_REGISTRO => date(FORMATO_FECHA_SAVE),
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
-		);		
+		);
 		$query=$this->db->insert(TABLA_EVENTO,$data);
 		return $query;
 	}
@@ -43,9 +43,9 @@ class Evento_model extends CI_Model{
 		$data=array(
 			NOMBRE => $data[NOMBRE],
 			LUGAR => $data[LUGAR],
-			FECHA => $data[FECHA],
+			FECHA => date_format($data[FECHA], FORMATO_FECHA_SAVE),
 			LIMITE_EMISION => $data[LIMITE_EMISION],
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);
 		$this->db->where(IDEVE,$ideve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
@@ -57,7 +57,7 @@ class Evento_model extends CI_Model{
 	function del($ideve){
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);
 		$this->db->where(IDEVE,$ideve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);

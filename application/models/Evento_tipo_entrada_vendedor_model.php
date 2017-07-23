@@ -28,8 +28,8 @@ class Evento_tipo_entrada_vendedor_model extends CI_Model{
 			IDEVEVE => $data[IDEVEVE],
 			IDEVETE => $data[IDEVETE],
 			CANTIDAD_ENTRADA => $data[CANTIDAD_ENTRADA],
-			FECHA_REGISTRO => date(FORMATO_FECHA),
-			FECHA_EDICION => date(FORMATO_FECHA),
+			FECHA_REGISTRO => date(FORMATO_FECHA_SAVE),
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
 		);
 		$query=$this->db->insert(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR,$data);
@@ -45,7 +45,7 @@ class Evento_tipo_entrada_vendedor_model extends CI_Model{
 	function del($ideveteve){
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);
 		$this->db->where(IDEVETEVE,$ideveteve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
