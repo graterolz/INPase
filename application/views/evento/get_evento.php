@@ -199,6 +199,64 @@ if ($evento){
 				<!-- /.panel-body -->
 			</div>
 			<!-- /.panel -->
+
+			<!-- USUARIO_PORTERO -->
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-lg-10">
+							<div class="btn btn-default">
+								<i class="fa fa-user fa-fw"></i><strong><?= TITULO_PORTERO; ?></strong>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<a href="#" class="btn btn-default"><i class="fa fa-user fa-fw"></i><strong>NUEVO</strong></a>
+						</div>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th><?= $evento_vendedor_rules[IDEVEVE]['label']; ?></th>
+									<th><?= $usuario_vendedor_rules[NOMBRE]['label']; ?></th>
+									<th><?= $usuario_vendedor_rules[APELLIDO]['label']; ?></th>
+									<th><?= $usuario_vendedor_rules[EMAIL]['label']; ?></th>
+									<th colspan="2"></th>
+								</tr>
+							</thead>
+							<tbody>
+<?php
+	if($usuario_portero){
+		foreach($usuario_portero->result() as $usuario_portero_row){
+?>
+								<tr>
+									<td><?= $usuario_portero_row->ideveve; ?></td>
+									<td><?= $usuario_portero_row->nombre; ?></td>
+									<td><?= $usuario_portero_row->apellido; ?></td>
+									<td><?= $usuario_portero_row->email; ?></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_GET."/".$usuario_portero_row->ideveve; ?>" class="btn btn-success btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_DEL."/".$usuario_portero_row->ideveve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
+								</tr>
+<?php
+		}
+	}else{
+?>
+								<tr>
+									<td colspan="5"><center><h3>Sin Porteros asociados.</h3></center></td>
+								</tr>
+<?php
+	}
+?>
+							</tbody>
+						</table>
+					</div>
+					<!-- /.table-responsive -->
+				</div>
+				<!-- /.panel-body -->
+			</div>
+			<!-- /.panel -->
 		</div>
 		<!-- /.col-lg-12 -->
 	</div>

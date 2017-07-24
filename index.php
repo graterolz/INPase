@@ -73,7 +73,7 @@ define ('EVENTO_ENTRADA_EDIT','evento_entrada/edit');
 
 // Tablas
 define ('TABLA_USUARIO','usuario');
-define ('TABLA_USUARIO_VENDEDOR','usuario_vendedor');
+define ('TABLA_USUARIO_ROL','usuario_rol');
 define ('TABLA_EVENTO','evento');
 define ('TABLA_EVENTO_VENDEDOR','evento_vendedor');
 define ('TABLA_EVENTO_TIPO_ENTRADA','evento_tipo_entrada');
@@ -134,6 +134,7 @@ define ('TITULO_EVENTO','Informacion de Evento');
 define ('TITULO_EVENTO_TIPO_ENTRADA','Informacion de Tipos de Entradas');
 define ('TITULO_EVENTO_TIPO_ENTRADA_VENDEDOR','Informacion de  Tipos de Entradas por Vendedor');
 define ('TITULO_VENDEDOR','Informacion de Vendedor/s');
+define ('TITULO_PORTERO','Informacion de Portero/s');
 define ('TITULO_EVENTO_ENTRADA','Informacion de Entrada/s');
 
 // Vistas MENU

@@ -46,8 +46,8 @@ INSERT INTO `usuario`
 (NULL, 'VEND', 'user5', 'user5', NOW(), NOW(), 1);
 
 -- usuario_vendedor
-DROP TABLE IF EXISTS `usuario_vendedor`;
-CREATE TABLE IF NOT EXISTS `usuario_vendedor` (
+DROP TABLE IF EXISTS `usuario_rol`;
+CREATE TABLE IF NOT EXISTS `usuario_rol` (
 	`idusu` int(10) NOT NULL,
 	`idrol` varchar(4) NOT NULL,
 	`nombre` varchar(50) NOT NULL,
@@ -63,11 +63,11 @@ CREATE TABLE IF NOT EXISTS `usuario_vendedor` (
 	`estado_registro` int(1) NOT NULL,
 	PRIMARY KEY (`idusu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-INSERT INTO `usuario_vendedor`
+INSERT INTO `usuario_rol`
 (`idusu`, `idrol`, `nombre`, `apellido`, `telefono`, `direccion`, `email`, `facebook`, `twitter`, `url_foto`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
-(3, 'VEND', 'Vendedor', '1', '999999999', 'Direccion 1.', 'vendedor1@inpase.com', '@vendedor1', '@vendedor1', '.', NOW(), NOW(), 1),
-(5, 'VEND', 'Vendedor', '2', '999999999', 'Direccion 1.', 'vendedor2@inpase.com', '@vendedor2', '@vendedor2', '.', NOW(), NOW(), 1),
-(6, 'VEND', 'Vendedor', '3', '999999999', 'Direccion 1.', 'vendedor3@inpase.com', '@vendedor3', '@vendedor3', '.', NOW(), NOW(), 1),
+(3, 'VEND', 'Vendedor', '#1', '999999999', 'Direccion 1.', 'vendedor1@inpase.com', '@vendedor1', '@vendedor1', '.', NOW(), NOW(), 1),
+(5, 'VEND', 'Vendedor', '#2', '999999999', 'Direccion 1.', 'vendedor2@inpase.com', '@vendedor2', '@vendedor2', '.', NOW(), NOW(), 1),
+(6, 'VEND', 'Vendedor', '#3', '999999999', 'Direccion 1.', 'vendedor3@inpase.com', '@vendedor3', '@vendedor3', '.', NOW(), NOW(), 1),
 (4, 'PORT', 'Portero', '#1', '999999999', 'Direccion 1.', 'portero1@inpase.com', '@portero1', '@portero1', '.', NOW(), NOW(), 1);
 
 -- Constraints
@@ -112,7 +112,7 @@ INSERT INTO `evento_vendedor`
 (NULL, 1, 5, NOW(), NOW(), 1),
 (NULL, 1, 4, NOW(), NOW(), 1);
 
--- evento_portero
+-- evento_usuario
 /*DROP TABLE IF EXISTS `evento_portero`;
 CREATE TABLE IF NOT EXISTS `evento_portero` (
 	`idevepo` int(10) AUTO_INCREMENT NOT NULL,

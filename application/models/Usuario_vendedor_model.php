@@ -12,7 +12,7 @@ class Usuario_vendedor_model extends CI_Model{
 	function get($idusu){
 		$this->db->where(IDUSU,$idusu);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$query=$this->db->get(TABLA_USUARIO_VENDEDOR);
+		$query=$this->db->get(TABLA_USUARIO_ROL);
 		if($query->num_rows()>0){
 			return $query;
 		}else{
@@ -36,7 +36,7 @@ class Usuario_vendedor_model extends CI_Model{
 			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
 		);		
-		$query=$this->db->insert(TABLA_USUARIO_VENDEDOR,$data);
+		$query=$this->db->insert(TABLA_USUARIO_ROL,$data);
 		return $query;
 	}
 
@@ -55,7 +55,7 @@ class Usuario_vendedor_model extends CI_Model{
 		);		
 		$this->db->where(IDUSU,$idusu);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$query=$this->db->update(TABLA_USUARIO_VENDEDOR,$data);
+		$query=$this->db->update(TABLA_USUARIO_ROL,$data);
 		return $query;
 	}
 
@@ -67,7 +67,7 @@ class Usuario_vendedor_model extends CI_Model{
 		);
 		$this->db->where(IDUSU,$idusu);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$query=$this->db->update(TABLA_USUARIO_VENDEDOR,$data);
+		$query=$this->db->update(TABLA_USUARIO_ROL,$data);
 		return $query;
 	}
 
