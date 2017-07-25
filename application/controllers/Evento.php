@@ -10,7 +10,7 @@ class Evento extends CI_Controller {
 		$this->load->model(EVENTO_VENDEDOR_MODEL);
 		$this->load->model(EVENTO_TIPO_ENTRADA_MODEL);
 		$this->load->model(EVENTO_ENTRADA_MODEL);
-		$this->load->model(USUARIO_VENDEDOR_MODEL);		
+		$this->load->model(USUARIO_ROL_MODEL);		
 	}
 
 	// Index
@@ -31,8 +31,8 @@ class Evento extends CI_Controller {
 			$this->load->view(LIST_EVENTO_ORGA,$data);
 		}
 		if ($this->session->userdata(IDROL_SESSION) == VEND){
-			$data['usuario_vendedor'] = $this->Usuario_vendedor_model->get($idusu);
-			$data['usuario_vendedor_rules'] = $this->Usuario_vendedor_model->usuario_vendedor_rules;
+			$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
+			$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 			$data['evento'] = $this->Sys_model->getEventoByUsuarioVendedor($idusu);
 			$data['evento_rules'] = $this->Evento_model->evento_rules;
 			$data['evento_vendedor_rules'] = $this->Evento_vendedor_model->evento_vendedor_rules;
@@ -40,8 +40,8 @@ class Evento extends CI_Controller {
 		}
 		if($this->session->userdata(IDROL_SESSION)==PORT){
 			//redirect(EVENTO_ENTRADA_SEARCH, 'refresh');
-			$data['usuario_vendedor'] = $this->Usuario_vendedor_model->get($idusu);
-			$data['usuario_vendedor_rules'] = $this->Usuario_vendedor_model->usuario_vendedor_rules;
+			$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
+			$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 			$data['evento'] = $this->Sys_model->getEventoByUsuarioVendedor($idusu);
 			$data['evento_rules'] = $this->Evento_model->evento_rules;
 			$data['evento_vendedor_rules'] = $this->Evento_vendedor_model->evento_vendedor_rules;
@@ -72,7 +72,7 @@ class Evento extends CI_Controller {
 
 		$data['usuario_vendedor'] = $this->Sys_model->getUsuarioVENDByEvento($ideve);
 		$data['usuario_portero'] = $this->Sys_model->getUsuarioPORTByEvento($ideve);
-		$data['usuario_vendedor_rules'] = $this->Usuario_vendedor_model->usuario_vendedor_rules;
+		$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 		$data['evento_vendedor_rules'] = $this->Evento_vendedor_model->evento_vendedor_rules;
 
 		$this->load->view(HEADER);

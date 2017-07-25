@@ -53,20 +53,20 @@ class Sys_model extends CI_Model{
 	// Obtiene informacion de usuario vendedores asociada a un evento
 	function getUsuarioVENDByEvento($ideve){
 		$this->db->select(
-			TABLA_EVENTO_VENDEDOR.'.'.IDEVEVE.','.
+			TABLA_EVENTO_USUARIO.'.'.IDEVEVE.','.
 			TABLA_USUARIO_ROL.'.'.NOMBRE.','.
 			TABLA_USUARIO_ROL.'.'.APELLIDO.','.
 			TABLA_USUARIO_ROL.'.'.EMAIL
 		);
-		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.IDEVE,$ideve);
-		$this->db->from(TABLA_EVENTO_VENDEDOR);
+		$this->db->where(TABLA_EVENTO_USUARIO.'.'.IDEVE,$ideve);
+		$this->db->from(TABLA_EVENTO_USUARIO);
 		$this->db->join(
 			TABLA_USUARIO_ROL,
-			TABLA_USUARIO_ROL.'.'.IDUSU.'='.TABLA_EVENTO_VENDEDOR.'.'.IDUSU,
+			TABLA_USUARIO_ROL.'.'.IDUSU.'='.TABLA_EVENTO_USUARIO.'.'.IDUSU,
 			'INNER'
 		);
 		$this->db->where(TABLA_USUARIO_ROL.'.'.IDROL,VEND);
-		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
+		$this->db->where(TABLA_EVENTO_USUARIO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->order_by(1,'ASC');
 		$query=$this->db->get();
 
@@ -80,20 +80,20 @@ class Sys_model extends CI_Model{
 	// Obtiene informacion de usuario vendedores asociada a un evento
 	function getUsuarioPORTByEvento($ideve){
 		$this->db->select(
-			TABLA_EVENTO_VENDEDOR.'.'.IDEVEVE.','.
+			TABLA_EVENTO_USUARIO.'.'.IDEVEVE.','.
 			TABLA_USUARIO_ROL.'.'.NOMBRE.','.
 			TABLA_USUARIO_ROL.'.'.APELLIDO.','.
 			TABLA_USUARIO_ROL.'.'.EMAIL
 		);
-		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.IDEVE,$ideve);
-		$this->db->from(TABLA_EVENTO_VENDEDOR);
+		$this->db->where(TABLA_EVENTO_USUARIO.'.'.IDEVE,$ideve);
+		$this->db->from(TABLA_EVENTO_USUARIO);
 		$this->db->join(
 			TABLA_USUARIO_ROL,
-			TABLA_USUARIO_ROL.'.'.IDUSU.'='.TABLA_EVENTO_VENDEDOR.'.'.IDUSU,
+			TABLA_USUARIO_ROL.'.'.IDUSU.'='.TABLA_EVENTO_USUARIO.'.'.IDUSU,
 			'INNER'
 		);
 		$this->db->where(TABLA_USUARIO_ROL.'.'.IDROL,PORT);
-		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
+		$this->db->where(TABLA_EVENTO_USUARIO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->order_by(1,'ASC');
 		$query=$this->db->get();
 
@@ -132,13 +132,13 @@ class Sys_model extends CI_Model{
 	}
 	
 	// Obtiene informacion de usuario vendedores no asociada a un evento
-	function getUsuarioVendedorNoIntoEvento($ideve){
-		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.IDEVE,$ideve);
+	function getUsuarioVendedorNoIntoEvento($idrol,$ideve){
+		$this->db->where(TABLA_EVENTO_USUARIO.'.'.IDEVE,$ideve);
 		$this->db->select(
-			TABLA_EVENTO_VENDEDOR.'.'.IDUSU
+			TABLA_EVENTO_USUARIO.'.'.IDUSU
 		);
-		$this->db->from(TABLA_EVENTO_VENDEDOR);
-		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
+		$this->db->from(TABLA_EVENTO_USUARIO);
+		$this->db->where(TABLA_EVENTO_USUARIO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->get();
 		//echo $this->db->last_query();
 
@@ -159,7 +159,7 @@ class Sys_model extends CI_Model{
 			TABLA_USUARIO_ROL.'.'.EMAIL
 		);
 		$this->db->from(TABLA_USUARIO_ROL);
-		$this->db->where(TABLA_USUARIO_ROL.'.'.IDROL,VEND);
+		$this->db->where(TABLA_USUARIO_ROL.'.'.IDROL,$idrol);
 		$this->db->where(TABLA_USUARIO_ROL.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->where_not_in(IDUSU, $data);
 		$query=$this->db->get();
@@ -176,7 +176,7 @@ class Sys_model extends CI_Model{
 	function getTipoEntradaVendedorNoIntoVendedor($ideveve){
 		$this->db->where(IDEVEVE,$ideveve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$query=$this->db->get(TABLA_EVENTO_VENDEDOR);
+		$query=$this->db->get(TABLA_EVENTO_USUARIO);
 
 		if($query->num_rows()>0){
 			$ideve = $query->row()->ideve;
@@ -222,20 +222,20 @@ class Sys_model extends CI_Model{
 
 	// Obtener informacion de eventos asociados a un vendedor
 	function getEventoByUsuarioVendedor($idusu){
-		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.IDUSU,$idusu);
+		$this->db->where(TABLA_EVENTO_USUARIO.'.'.IDUSU,$idusu);
 		$this->db->select(
-			TABLA_EVENTO_VENDEDOR.'.'.IDEVEVE.','.
+			TABLA_EVENTO_USUARIO.'.'.IDEVEVE.','.
 			TABLA_EVENTO.'.'.NOMBRE.','.
 			TABLA_EVENTO.'.'.FECHA.','.
 			TABLA_EVENTO.'.'.LIMITE_EMISION
 		);
-		$this->db->from(TABLA_EVENTO_VENDEDOR);
+		$this->db->from(TABLA_EVENTO_USUARIO);
 		$this->db->join(
 			TABLA_EVENTO,
-			TABLA_EVENTO.'.'.IDEVE.'='.TABLA_EVENTO_VENDEDOR.'.'.IDEVE,
+			TABLA_EVENTO.'.'.IDEVE.'='.TABLA_EVENTO_USUARIO.'.'.IDEVE,
 			'INNER'
 		);
-		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
+		$this->db->where(TABLA_EVENTO_USUARIO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->order_by(1,'ASC');
 		$query=$this->db->get();
 		//echo $this->db->last_query();
@@ -249,8 +249,8 @@ class Sys_model extends CI_Model{
 
 	//
 	function getsEntradaByEvento($ideve){
-		$this->db->select(TABLA_EVENTO_VENDEDOR.'.'.IDEVEVE);
-		$this->db->from(TABLA_EVENTO_VENDEDOR);
+		$this->db->select(TABLA_EVENTO_USUARIO.'.'.IDEVEVE);
+		$this->db->from(TABLA_EVENTO_USUARIO);
 		$this->db->where(IDEVE,$ideve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->get();
@@ -299,11 +299,11 @@ class Sys_model extends CI_Model{
 		$this->db->select(
 			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVETEVE
 		);		
-		$this->db->from(TABLA_EVENTO_VENDEDOR);
-		$this->db->where(TABLA_EVENTO_VENDEDOR.'.'.IDEVE,$ideve);
+		$this->db->from(TABLA_EVENTO_USUARIO);
+		$this->db->where(TABLA_EVENTO_USUARIO.'.'.IDEVE,$ideve);
 		$this->db->join(
 			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR,
-			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVEVE.'='.TABLA_EVENTO_VENDEDOR.'.'.IDEVEVE,
+			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVEVE.'='.TABLA_EVENTO_USUARIO.'.'.IDEVEVE,
 			'INNER'
 		);
 		$query=$this->db->get();

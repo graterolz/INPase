@@ -1,29 +1,3 @@
--- productoras
-/*
-DROP TABLE IF EXISTS `productora`;
-CREATE TABLE IF NOT EXISTS `productora` (
-	`idprod` int(10) AUTO_INCREMENT NOT NULL,
-	`nombre_emp` varchar(50) NOT NULL,
-	`direccion` varchar(50) NOT NULL,
-	`telefono_emp` varchar(50) NOT NULL,
-	`web` varchar(50) NOT NULL,
-	`email_emp` varchar(50) NOT NULL,
-	`nombre_resp` varchar(50) NOT NULL,
-	`email_resp` varchar(50) NOT NULL,
-	`telefono_resp` varchar(50) NOT NULL,
-	`user` varchar(50) NOT NULL,
-	`pass` varchar(50) NOT NULL,
-	`fecha_registro` datetime NOT NULL,
-	`fecha_edicion` datetime NOT NULL,
-	`estado_registro` int(1) NOT NULL,
-	PRIMARY KEY (`idprod`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-INSERT INTO `productora`
-(`idprod`, `nombre_emp`, `direccion`, `telefono_emp`, `web`, `email_emp`, `nombre_resp`, `email_resp`, `telefono_resp`, `user`, `pass`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
-(NULL, 'Empresa 1', 'empresa1@inpase.com', '999999999', 'S/I', 'S/I', 'Emilio Graterol', 'ejgraterolz@gmail.com', '999999999', 'admin', 'admin', NOW(), NOW(), 1);
-*/
-
 -- usuario
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -45,7 +19,7 @@ INSERT INTO `usuario`
 (NULL, 'VEND', 'user4', 'user4', NOW(), NOW(), 1),
 (NULL, 'VEND', 'user5', 'user5', NOW(), NOW(), 1);
 
--- usuario_vendedor
+-- usuario_rol OLD(usuario_vendedor)
 DROP TABLE IF EXISTS `usuario_rol`;
 CREATE TABLE IF NOT EXISTS `usuario_rol` (
 	`idusu` int(10) NOT NULL,
@@ -94,9 +68,9 @@ INSERT INTO `evento`
 (NULL, 1, 'Evento 2', 'Centro', NOW(), 24, NOW(), NOW(), 1),
 (NULL, 1, 'Evento 3', 'Centro', NOW(), 24, NOW(), NOW(), 1);
 
--- vendedor_evento
-DROP TABLE IF EXISTS `evento_vendedor`;
-CREATE TABLE IF NOT EXISTS `evento_vendedor` (
+-- evento_usuario OLD(evento_vendedor)
+DROP TABLE IF EXISTS `evento_usuario`;
+CREATE TABLE IF NOT EXISTS `evento_usuario` (
 	`ideveve` int(10) AUTO_INCREMENT NOT NULL,
 	`ideve` int(10) NOT NULL,
 	`idusu` int(10) NOT NULL,
@@ -105,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `evento_vendedor` (
 	`estado_registro` int(1) NOT NULL,
 	PRIMARY KEY (`ideveve`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-INSERT INTO `evento_vendedor`
+INSERT INTO `evento_usuario`
 (`ideveve`, `ideve`, `idusu`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
 (NULL, 1, 3, NOW(), NOW(), 1),
 (NULL, 2, 3, NOW(), NOW(), 1),

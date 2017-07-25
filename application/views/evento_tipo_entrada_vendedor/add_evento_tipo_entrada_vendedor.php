@@ -81,7 +81,7 @@ if ($usuario_vendedor){
 	);
 }
 ?>
-			<!-- USUARIO_VENDEDOR -->
+			<!-- USUARIO_ROL -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<div class="row">
@@ -106,33 +106,33 @@ if ($usuario_vendedor){
 								<div class="row">
 									<div class="col-lg-4">
 										<div class="form-group">
-											<?= form_label($usuario_vendedor_rules[TELEFONO]['label'],$usuario_vendedor_rules[TELEFONO]['field']); ?>
+											<?= form_label($usuario_rol_rules[TELEFONO]['label'],$usuario_rol_rules[TELEFONO]['field']); ?>
 											<?= form_input($usuario_vendedor_form[TELEFONO]); ?>
 										</div>
 										<div class="form-group">
-											<?= form_label($usuario_vendedor_rules[FACEBOOK]['label'],$usuario_vendedor_rules[FACEBOOK]['field']); ?>
+											<?= form_label($usuario_rol_rules[FACEBOOK]['label'],$usuario_rol_rules[FACEBOOK]['field']); ?>
 											<?= form_input($usuario_vendedor_form[FACEBOOK]); ?>
 										</div>
 									</div>
 									<!-- /.col-lg-4 (nested) -->
 									<div class="col-lg-4">
 										<div class="form-group">
-											<?= form_label($usuario_vendedor_rules[DIRECCION]['label'],$usuario_vendedor_rules[DIRECCION]['field']); ?>
+											<?= form_label($usuario_rol_rules[DIRECCION]['label'],$usuario_rol_rules[DIRECCION]['field']); ?>
 											<?= form_input($usuario_vendedor_form[DIRECCION]); ?>
 										</div>
 										<div class="form-group">
-											<?= form_label($usuario_vendedor_rules[TWITTER]['label'],$usuario_vendedor_rules[TWITTER]['field']); ?>
+											<?= form_label($usuario_rol_rules[TWITTER]['label'],$usuario_rol_rules[TWITTER]['field']); ?>
 											<?= form_input($usuario_vendedor_form[TWITTER]); ?>
 										</div>
 									</div>
 									<!-- /.col-lg-4 (nested) -->
 									<div class="col-lg-4">
 										<div class="form-group">
-											<?= form_label($usuario_vendedor_rules[EMAIL]['label'],$usuario_vendedor_rules[EMAIL]['field']); ?>
+											<?= form_label($usuario_rol_rules[EMAIL]['label'],$usuario_rol_rules[EMAIL]['field']); ?>
 											<?= form_input($usuario_vendedor_form[EMAIL]); ?>
 										</div>
 										<div class="form-group">
-											<?= form_label($usuario_vendedor_rules[URL_FOTO]['label'],$usuario_vendedor_rules[URL_FOTO]['field']); ?>
+											<?= form_label($usuario_rol_rules[URL_FOTO]['label'],$usuario_rol_rules[URL_FOTO]['field']); ?>
 											<?= form_input($usuario_vendedor_form[URL_FOTO]); ?>
 										</div>
 									</div>

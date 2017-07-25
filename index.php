@@ -15,7 +15,7 @@ define ('SYS_HELPER','Sys_helper');
 // Modelos
 define ('SYS_MODEL','Sys_model');
 define ('USUARIO_MODEL','Usuario_model');
-define ('USUARIO_VENDEDOR_MODEL','Usuario_vendedor_model');
+define ('USUARIO_ROL_MODEL','Usuario_rol_model');
 define ('EVENTO_MODEL','Evento_model');
 define ('EVENTO_VENDEDOR_MODEL','Evento_vendedor_model');
 define ('EVENTO_TIPO_ENTRADA_MODEL','Evento_tipo_entrada_model');
@@ -24,7 +24,7 @@ define ('EVENTO_ENTRADA_MODEL','Evento_entrada_model');
 
 // Controladores
 define ('USUARIO_CONTROLLER','usuario');
-define ('USUARIO_VENDEDOR_CONTROLLER','usuario_vendedor');
+// define ('USUARIO_VENDEDOR_CONTROLLER','usuario_vendedor');
 define ('EVENTO_CONTROLLER','evento');
 define ('EVENTO_VENDEDOR_CONTROLLER','evento_vendedor');
 define ('EVENTO_TIPO_ENTRADA_CONTROLLER', 'evento_tipo_entrada');
@@ -37,9 +37,6 @@ define ('USUARIO_LOGIN','usuario/login');
 define ('USUARIO_REGISTER','usuario/register');
 define ('USUARIO_LOGOUT','usuario/logout');
 
-// Metodos Controlador USUARIO_VENDEDOR
-//define ('USUARIO_VENDEDOR_ADD','usuario_vendedor/add');
-
 // Metodos Controlador EVENTO
 define ('EVENTO_GET','evento/get');
 define ('EVENTO_ADD','evento/add');
@@ -49,6 +46,7 @@ define ('EVENTO_DEL','evento/del');
 // Metodos Controlador EVENTO_VENDEDOR
 define ('EVENTO_VENDEDOR_GET','evento_vendedor/get');
 define ('EVENTO_VENDEDOR_ADD','evento_vendedor/add');
+define ('EVENTO_VENDEDOR_ADD_PORT','evento_vendedor/addPORT');
 define ('EVENTO_VENDEDOR_DEL','evento_vendedor/del');
 
 // Metodos Controlador EVENTO_TIPO_ENTRADA
@@ -75,7 +73,7 @@ define ('EVENTO_ENTRADA_EDIT','evento_entrada/edit');
 define ('TABLA_USUARIO','usuario');
 define ('TABLA_USUARIO_ROL','usuario_rol');
 define ('TABLA_EVENTO','evento');
-define ('TABLA_EVENTO_VENDEDOR','evento_vendedor');
+define ('TABLA_EVENTO_USUARIO','evento_usuario');
 define ('TABLA_EVENTO_TIPO_ENTRADA','evento_tipo_entrada');
 define ('TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR','evento_tipo_entrada_vendedor');
 define ('TABLA_EVENTO_ENTRADA','evento_entrada');
@@ -89,7 +87,7 @@ define ('FECHA_REGISTRO','fecha_registro');
 define ('FECHA_EDICION','fecha_edicion');
 define ('ESTADO_REGISTRO','estado_registro');
 
-// Campos Tabla USUARIO_VENDEDOR
+// Campos Tabla USUARIO_ROL
 define ('NOMBRE','nombre');
 define ('APELLIDO','apellido');
 define ('TELEFONO','telefono');

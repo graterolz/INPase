@@ -6,7 +6,7 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model(SYS_MODEL);
-		$this->load->model(USUARIO_VENDEDOR_MODEL);
+		$this->load->model(USUARIO_ROL_MODEL);
 		$this->load->model(EVENTO_MODEL);
 		$this->load->model(EVENTO_VENDEDOR_MODEL);
 		$this->load->model(EVENTO_TIPO_ENTRADA_VENDEDOR_MODEL);
@@ -63,8 +63,8 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 		}		
 
 		$idusu = $this->Evento_vendedor_model->get($ideveve)->row()->idusu;
-		$data['usuario_vendedor'] = $this->Usuario_vendedor_model->get($idusu);
-		$data['usuario_vendedor_rules'] = $this->Usuario_vendedor_model->usuario_vendedor_rules;
+		$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
+		$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 		$data['evento_tipo_entrada_vendedor_rules']	= $rules;
 		//
 		$evento_tipo_entrada_vendedor = $this->Sys_model->getTipoEntradaVendedorNoIntoVendedor($ideveve);

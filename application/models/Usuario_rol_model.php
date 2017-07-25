@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Usuario_vendedor_model extends CI_Model{
+class Usuario_rol_model extends CI_Model{
 
 	public function __construct(){
 		parent::__construct();
 		$this->load->database();
 	}
 
-	// Obtener informacion de usuario_vendedor
+	// Obtener informacion de usuario_rol
 	function get($idusu){
 		$this->db->where(IDUSU,$idusu);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
@@ -20,7 +20,7 @@ class Usuario_vendedor_model extends CI_Model{
 		}
 	}
 
-	// Insertar informacion de usuario_vendedor
+	// Insertar informacion de usuario_rol
 	function add($data){
 		$data=array(
 			IDUSU => $data[IDUSU],
@@ -40,7 +40,7 @@ class Usuario_vendedor_model extends CI_Model{
 		return $query;
 	}
 
-	// Editar informacion de usuario_vendedor
+	// Editar informacion de usuario_rol
 	function edit($idusu,$data){
 		$data=array(
 			NOMBRE => $data[NOMBRE],
@@ -59,7 +59,7 @@ class Usuario_vendedor_model extends CI_Model{
 		return $query;
 	}
 
-	// Eliminar informacion de usuario_vendedor
+	// Eliminar informacion de usuario_rol
 	function del($idusu){
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,
@@ -72,7 +72,7 @@ class Usuario_vendedor_model extends CI_Model{
 	}
 
 	// Reglas para formularios
-	public $usuario_vendedor_rules = array(
+	public $usuario_rol_rules = array(
 		IDUSU => array(
 			'label' => 'IDUSU'
 		),

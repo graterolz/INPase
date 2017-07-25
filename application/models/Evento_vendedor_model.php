@@ -12,7 +12,7 @@ class Evento_vendedor_model extends CI_Model{
 	function get($ideveve){
 		$this->db->where(IDEVEVE,$ideveve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$query=$this->db->get(TABLA_EVENTO_VENDEDOR);
+		$query=$this->db->get(TABLA_EVENTO_USUARIO);
 		if($query->num_rows()>0){
 			return $query;
 		}else{
@@ -30,9 +30,10 @@ class Evento_vendedor_model extends CI_Model{
 			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
 		);
-		$query=$this->db->insert(TABLA_EVENTO_VENDEDOR,$data);
+		$query=$this->db->insert(TABLA_EVENTO_USUARIO,$data);
 		return $query;
 	}
+	
 
 	// Editar informacion de evento_vendedor
 	function edit($ideveve,$data){
@@ -42,7 +43,7 @@ class Evento_vendedor_model extends CI_Model{
 		);
 		$this->db->where(IDEVEVE,$ideveve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$query=$this->db->update(TABLA_EVENTO_VENDEDOR,$data);
+		$query=$this->db->update(TABLA_EVENTO_USUARIO,$data);
 		return $query;
 	}
 
@@ -54,7 +55,7 @@ class Evento_vendedor_model extends CI_Model{
 		);
 		$this->db->where(IDEVEVE,$ideveve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$query=$this->db->update(TABLA_EVENTO_VENDEDOR,$data);
+		$query=$this->db->update(TABLA_EVENTO_USUARIO,$data);
 		return $query;
 	}
 	

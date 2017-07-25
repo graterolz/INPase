@@ -20,6 +20,12 @@ if ($evento){
 			'value' => $evento_row->nombre,
 			'readonly' => TRUE
 		),
+		LUGAR => array(
+			'class' => 'form-control',
+			'name' => LUGAR,
+			'value' => $evento_row->lugar,
+			'readonly' => TRUE
+		),
 		FECHA => array(
 			'class' => 'form-control',
 			'name' => FECHA,
@@ -58,20 +64,24 @@ if ($evento){
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-lg-6">
+									<div class="col-lg-4">
 										<div class="form-group">
 											<?= form_label($evento_rules[FECHA]['label'],$evento_rules[FECHA]['field']); ?>
 											<?= form_input($evento_form[FECHA]); ?>
 										</div> 
 									</div>
-									<!-- /.col-lg-4 (nested) -->
-									<div class="col-lg-6">
+									<div class="col-lg-4">
+										<div class="form-group">
+											<?= form_label($evento_rules[LUGAR]['label'],$evento_rules[LUGAR]['field']); ?>
+											<?= form_input($evento_form[LUGAR]); ?>
+										</div> 
+									</div>
+									<div class="col-lg-4">
 										<div class="form-group">
 											<?= form_label($evento_rules[LIMITE_EMISION]['label'],$evento_rules[LIMITE_EMISION]['field']); ?>
 											<?= form_input($evento_form[LIMITE_EMISION]); ?>
 										</div>
 									</div>
-									<!-- /.col-lg-4 (nested) -->
 								</div>
 							</div>
 						</div>

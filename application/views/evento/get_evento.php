@@ -22,6 +22,12 @@ if ($evento){
 			'value' => $evento_row->nombre,
 			'readonly' => TRUE
 		),
+		LUGAR => array(
+			'class' => 'form-control',
+			'name' => LUGAR,
+			'value' => $evento_row->lugar,
+			'readonly' => TRUE
+		),
 		FECHA => array(
 			'class' => 'form-control',
 			'name' => FECHA,
@@ -60,20 +66,24 @@ if ($evento){
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-lg-6">
+									<div class="col-lg-4">
 										<div class="form-group">
 											<?= form_label($evento_rules[FECHA]['label'],$evento_rules[FECHA]['field']); ?>
 											<?= form_input($evento_form[FECHA]); ?>
 										</div> 
 									</div>
-									<!-- /.col-lg-4 (nested) -->
-									<div class="col-lg-6">
+									<div class="col-lg-4">
+										<div class="form-group">
+											<?= form_label($evento_rules[LUGAR]['label'],$evento_rules[LUGAR]['field']); ?>
+											<?= form_input($evento_form[LUGAR]); ?>
+										</div> 
+									</div>
+									<div class="col-lg-4">
 										<div class="form-group">
 											<?= form_label($evento_rules[LIMITE_EMISION]['label'],$evento_rules[LIMITE_EMISION]['field']); ?>
 											<?= form_input($evento_form[LIMITE_EMISION]); ?>
 										</div>
 									</div>
-									<!-- /.col-lg-4 (nested) -->
 								</div>
 							</div>
 						</div>
@@ -142,7 +152,7 @@ if ($evento){
 			</div>
 			<!-- /.panel -->
 
-			<!-- USUARIO_VENDEDOR -->
+			<!-- USUARIO_ROL -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<div class="row">
@@ -162,9 +172,9 @@ if ($evento){
 							<thead>
 								<tr>
 									<th><?= $evento_vendedor_rules[IDEVEVE]['label']; ?></th>
-									<th><?= $usuario_vendedor_rules[NOMBRE]['label']; ?></th>
-									<th><?= $usuario_vendedor_rules[APELLIDO]['label']; ?></th>
-									<th><?= $usuario_vendedor_rules[EMAIL]['label']; ?></th>
+									<th><?= $usuario_rol_rules[NOMBRE]['label']; ?></th>
+									<th><?= $usuario_rol_rules[APELLIDO]['label']; ?></th>
+									<th><?= $usuario_rol_rules[EMAIL]['label']; ?></th>
 									<th colspan="2"></th>
 								</tr>
 							</thead>
@@ -210,7 +220,7 @@ if ($evento){
 							</div>
 						</div>
 						<div class="col-lg-2">
-							<a href="#" class="btn btn-default"><i class="fa fa-user fa-fw"></i><strong>NUEVO</strong></a>
+							<a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_ADD_PORT."/".$evento_row->ideve; ?>" class="btn btn-default"><i class="fa fa-user fa-fw"></i><strong>NUEVO</strong></a>
 						</div>
 					</div>
 				</div>
@@ -220,10 +230,10 @@ if ($evento){
 							<thead>
 								<tr>
 									<th><?= $evento_vendedor_rules[IDEVEVE]['label']; ?></th>
-									<th><?= $usuario_vendedor_rules[NOMBRE]['label']; ?></th>
-									<th><?= $usuario_vendedor_rules[APELLIDO]['label']; ?></th>
-									<th><?= $usuario_vendedor_rules[EMAIL]['label']; ?></th>
-									<th colspan="2"></th>
+									<th><?= $usuario_rol_rules[NOMBRE]['label']; ?></th>
+									<th><?= $usuario_rol_rules[APELLIDO]['label']; ?></th>
+									<th><?= $usuario_rol_rules[EMAIL]['label']; ?></th>
+									<th colspan="1"></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -236,7 +246,7 @@ if ($evento){
 									<td><?= $usuario_portero_row->nombre; ?></td>
 									<td><?= $usuario_portero_row->apellido; ?></td>
 									<td><?= $usuario_portero_row->email; ?></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_GET."/".$usuario_portero_row->ideveve; ?>" class="btn btn-success btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER</strong></a></td>
+									<!--<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_GET."/".$usuario_portero_row->ideveve; ?>" class="btn btn-success btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER</strong></a></td>-->
 									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_DEL."/".$usuario_portero_row->ideveve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
 								</tr>
 <?php
