@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="col-lg-12">
 <?php
 //var_dump($usuario_vendedor);
-//var_dump($evento_vendedor);
+//var_dump($evento_usuario);
 if ($usuario_vendedor){
 	$usuario_vendedor_row = $usuario_vendedor->row();
 
@@ -148,7 +148,7 @@ if ($usuario_vendedor){
 						<table class="table">
 							<thead>
 								<tr>
-									<th><?= $evento_vendedor_rules[IDEVEVE]['label']; ?></th>
+									<th><?= $evento_usuario_rules[IDEVEVE]['label']; ?></th>
 									<th><?= $evento_rules[NOMBRE]['label']; ?></th>
 									<th><?= $evento_rules[FECHA]['label']; ?></th>
 									<th><?= $evento_rules[LIMITE_EMISION]['label']; ?></th>

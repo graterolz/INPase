@@ -59,7 +59,7 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 				CANTIDAD_ENTRADA => $this->input->post(CANTIDAD_ENTRADA)
 			);
 			$this->Evento_tipo_entrada_vendedor_model->add($data);
-			redirect(EVENTO_VENDEDOR_GET.'/'.$ideveve, 'refresh');
+			redirect(EVENTO_USUARIO_GET.'/'.$ideveve, 'refresh');
 		}		
 
 		$idusu = $this->Evento_usuario_model->get($ideveve)->row()->idusu;
@@ -99,7 +99,7 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
 		$ideveve = $this->Evento_tipo_entrada_vendedor_model->get($ideveteve)->row()->ideveve;
-		redirect(EVENTO_VENDEDOR_GET.'/'.$ideveve, 'refresh');
+		redirect(EVENTO_USUARIO_GET.'/'.$ideveve, 'refresh');
 	}
 
 	// Eliminar informacion de evento_tipo_entrada
@@ -118,8 +118,8 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 		}
 
 		$ideveve = $this->Evento_tipo_entrada_vendedor_model->get($ideveteve)->row()->ideveve;
-		redirect(EVENTO_VENDEDOR_GET.'/'.$ideveve, 'refresh');
+		redirect(EVENTO_USUARIO_GET.'/'.$ideveve, 'refresh');
 		$this->Evento_tipo_entrada_vendedor_model->del($ideveteve);
-		redirect(EVENTO_VENDEDOR_GET.'/'.$ideveve, 'refresh');
+		redirect(EVENTO_USUARIO_GET.'/'.$ideveve, 'refresh');
 	}
 }

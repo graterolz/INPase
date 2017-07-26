@@ -8,7 +8,7 @@ class Evento_usuario_model extends CI_Model{
 		$this->load->database();
 	}
 
-	// Obtener informacion de evento_vendedor
+	// Obtener informacion de evento_usuario
 	function get($ideveve){
 		$this->db->where(IDEVEVE,$ideveve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
@@ -20,7 +20,7 @@ class Evento_usuario_model extends CI_Model{
 		}
 	}
 
-	// Insertar informacion de evento_vendedor
+	// Insertar informacion de evento_usuario
 	function add($data){
 		$data=array(
 			IDEVEVE => NULL,
@@ -35,7 +35,7 @@ class Evento_usuario_model extends CI_Model{
 	}
 	
 
-	// Editar informacion de evento_vendedor
+	// Editar informacion de evento_usuario
 	function edit($ideveve,$data){
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,
@@ -47,7 +47,7 @@ class Evento_usuario_model extends CI_Model{
 		return $query;
 	}
 
-	// Eliminar informacion de evento_vendedor
+	// Eliminar informacion de evento_usuario
 	function del($ideveve){
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,
@@ -60,7 +60,7 @@ class Evento_usuario_model extends CI_Model{
 	}
 	
 	// Reglas para formularios
-	public $evento_vendedor_rules = array(
+	public $evento_usuario_rules = array(
 		IDEVEVE => array(
 			'label' => 'IDEVEVE'
 		),		

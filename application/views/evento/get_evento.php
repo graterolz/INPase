@@ -162,7 +162,7 @@ if ($evento){
 							</div>
 						</div>
 						<div class="col-lg-2">							
-							<a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_ADD."/".$evento_row->ideve; ?>" class="btn btn-default"><i class="fa fa-user fa-fw"></i><strong>NUEVO</strong></a>
+							<a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_ADD_VEND."/".$evento_row->ideve; ?>" class="btn btn-default"><i class="fa fa-user fa-fw"></i><strong>NUEVO</strong></a>
 						</div>
 					</div>
 				</div>
@@ -171,7 +171,7 @@ if ($evento){
 						<table class="table">
 							<thead>
 								<tr>
-									<th><?= $evento_vendedor_rules[IDEVEVE]['label']; ?></th>
+									<th><?= $evento_usuario_rules[IDEVEVE]['label']; ?></th>
 									<th><?= $usuario_rol_rules[NOMBRE]['label']; ?></th>
 									<th><?= $usuario_rol_rules[APELLIDO]['label']; ?></th>
 									<th><?= $usuario_rol_rules[EMAIL]['label']; ?></th>
@@ -188,8 +188,8 @@ if ($evento){
 									<td><?= $usuario_vendedor_row->nombre; ?></td>
 									<td><?= $usuario_vendedor_row->apellido; ?></td>
 									<td><?= $usuario_vendedor_row->email; ?></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_GET."/".$usuario_vendedor_row->ideveve; ?>" class="btn btn-success btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER</strong></a></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_DEL."/".$usuario_vendedor_row->ideveve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_GET."/".$usuario_vendedor_row->ideveve; ?>" class="btn btn-success btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_DEL."/".$usuario_vendedor_row->ideveve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
 								</tr>
 <?php
 		}
@@ -220,7 +220,7 @@ if ($evento){
 							</div>
 						</div>
 						<div class="col-lg-2">
-							<a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_ADD_PORT."/".$evento_row->ideve; ?>" class="btn btn-default"><i class="fa fa-user fa-fw"></i><strong>NUEVO</strong></a>
+							<a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_ADD_PORT."/".$evento_row->ideve; ?>" class="btn btn-default"><i class="fa fa-user fa-fw"></i><strong>NUEVO</strong></a>
 						</div>
 					</div>
 				</div>
@@ -229,7 +229,7 @@ if ($evento){
 						<table class="table">
 							<thead>
 								<tr>
-									<th><?= $evento_vendedor_rules[IDEVEVE]['label']; ?></th>
+									<th><?= $evento_usuario_rules[IDEVEVE]['label']; ?></th>
 									<th><?= $usuario_rol_rules[NOMBRE]['label']; ?></th>
 									<th><?= $usuario_rol_rules[APELLIDO]['label']; ?></th>
 									<th><?= $usuario_rol_rules[EMAIL]['label']; ?></th>
@@ -246,8 +246,8 @@ if ($evento){
 									<td><?= $usuario_portero_row->nombre; ?></td>
 									<td><?= $usuario_portero_row->apellido; ?></td>
 									<td><?= $usuario_portero_row->email; ?></td>
-									<!--<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_GET."/".$usuario_portero_row->ideveve; ?>" class="btn btn-success btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER</strong></a></td>-->
-									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_DEL."/".$usuario_portero_row->ideveve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
+									<!--<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_GET."/".$usuario_portero_row->ideveve; ?>" class="btn btn-success btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER</strong></a></td>-->
+									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_DEL."/".$usuario_portero_row->ideveve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
 								</tr>
 <?php
 		}

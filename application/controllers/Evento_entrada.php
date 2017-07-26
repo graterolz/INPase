@@ -144,7 +144,7 @@ class Evento_entrada extends CI_Controller {
 			redirect(USUARIO_CONTROLLER, 'refresh');
 		}
 
-		$rules = $this->Evento_usuario_model->evento_vendedor_rules;
+		$rules = $this->Evento_usuario_model->evento_usuario_rules;
 		$this->form_validation->set_rules($rules);
 
 		if ($this->form_validation->run() == TRUE) {

@@ -114,7 +114,7 @@ if ($evento){
 						</div>
 						<div class="col-lg-2">
 							<button type="submit" class="btn btn-default"><i class="fa fa-user fa-fw"></i><strong>NUEVO</strong></button>
-							<!--<a href="<?= base_url(PATH_MENU)."/".EVENTO_VENDEDOR_ADD."/".$evento_row->ideve; ?>" class="btn btn-default"><i class="fa fa-user fa-fw"></i><strong>NUEVO</strong></a>-->
+							<!--<a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_ADD_VEND."/".$evento_row->ideve; ?>" class="btn btn-default"><i class="fa fa-user fa-fw"></i><strong>NUEVO</strong></a>-->
 						</div>
 					</div>
 				</div>

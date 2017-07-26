@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'required' => TRUE
 		)
 	);
-	//var_dump($evento_vendedor->row());
+	//var_dump($evento_usuario->row());
 ?>
 			<?= form_open('',$form_attributes);?>
 			<div class="panel panel-primary">
