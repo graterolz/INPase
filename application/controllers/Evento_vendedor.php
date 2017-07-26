@@ -7,7 +7,7 @@ class Evento_vendedor extends CI_Controller {
 		parent::__construct();
 		$this->load->model(SYS_MODEL);
 		$this->load->model(EVENTO_MODEL);
-		$this->load->model(EVENTO_VENDEDOR_MODEL);
+		$this->load->model(EVENTO_USUARIO_MODEL);
 		$this->load->model(EVENTO_TIPO_ENTRADA_VENDEDOR_MODEL);
 		$this->load->model(USUARIO_ROL_MODEL);
 	}
@@ -26,14 +26,14 @@ class Evento_vendedor extends CI_Controller {
 		if($ideveve == NULL){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}		
-		if(!$this->Evento_vendedor_model->get($ideveve)){
+		if(!$this->Evento_usuario_model->get($ideveve)){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
 		if($this->session->userdata(IDROL_SESSION)!=ORGA){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
 
-		$idusu = $this->Evento_vendedor_model->get($ideveve)->row()->idusu;
+		$idusu = $this->Evento_usuario_model->get($ideveve)->row()->idusu;
 		
 		$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
 		$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
@@ -62,7 +62,7 @@ class Evento_vendedor extends CI_Controller {
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}		
 
-		$rules = $this->Evento_vendedor_model->evento_vendedor_rules;
+		$rules = $this->Evento_usuario_model->evento_vendedor_rules;
 		$this->form_validation->set_rules($rules);
 
 		if ($this->form_validation->run() == TRUE) {
@@ -70,14 +70,14 @@ class Evento_vendedor extends CI_Controller {
 				IDEVE => $ideve,
 				IDUSU => $this->input->post(NOMBRE_VENDEDOR)
 			);
-			$this->Evento_vendedor_model->add($data);
+			$this->Evento_usuario_model->add($data);
 			redirect(EVENTO_GET.'/'.$ideve, 'refresh');
 		}
 
 		$data['evento'] = $this->Evento_model->get($ideve);
 		$data['evento_rules'] = $this->Evento_model->evento_rules;
 		//
-		$evento_vendedor = $this->Sys_model->getUsuarioVendedorNoIntoEvento(VEND,$ideve);
+		$evento_vendedor = $this->Sys_model->getUsuarioNoIntoEvento($ideve,VEND);
 		$evento_vendedor_array['']='(None)';
 		if($evento_vendedor!=false){
 			foreach($evento_vendedor->result_array() as $row){
@@ -86,7 +86,7 @@ class Evento_vendedor extends CI_Controller {
 		}
 		//
 		$data['evento_vendedor'] = $evento_vendedor_array;
-		$data['usuario_rol_rules'] = $this->Evento_vendedor_model->evento_vendedor_rules;
+		$data['usuario_rol_rules'] = $this->Evento_usuario_model->evento_vendedor_rules;
 		$data['form_attributes'] = $this->Sys_model->form_attributes;
 
 		$this->load->view(HEADER);
@@ -110,7 +110,7 @@ class Evento_vendedor extends CI_Controller {
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}		
 
-		$rules = $this->Evento_vendedor_model->evento_vendedor_rules;
+		$rules = $this->Evento_usuario_model->evento_vendedor_rules;
 		$this->form_validation->set_rules($rules);
 
 		if ($this->form_validation->run() == TRUE) {
@@ -118,14 +118,14 @@ class Evento_vendedor extends CI_Controller {
 				IDEVE => $ideve,
 				IDUSU => $this->input->post(NOMBRE_VENDEDOR)
 			);
-			$this->Evento_vendedor_model->add($data);
+			$this->Evento_usuario_model->add($data);
 			redirect(EVENTO_GET.'/'.$ideve, 'refresh');
 		}
 
 		$data['evento'] = $this->Evento_model->get($ideve);
 		$data['evento_rules'] = $this->Evento_model->evento_rules;
 		//
-		$evento_vendedor = $this->Sys_model->getUsuarioVendedorNoIntoEvento(PORT,$ideve);
+		$evento_vendedor = $this->Sys_model->getUsuarioNoIntoEvento($ideve,PORT);
 		$evento_vendedor_array['']='(None)';
 		if($evento_vendedor!=false){
 			foreach($evento_vendedor->result_array() as $row){
@@ -134,7 +134,7 @@ class Evento_vendedor extends CI_Controller {
 		}
 		//
 		$data['evento_vendedor'] = $evento_vendedor_array;
-		$data['usuario_rol_rules'] = $this->Evento_vendedor_model->evento_vendedor_rules;
+		$data['usuario_rol_rules'] = $this->Evento_usuario_model->evento_vendedor_rules;
 		$data['form_attributes'] = $this->Sys_model->form_attributes;
 
 		$this->load->view(HEADER);
@@ -159,14 +159,14 @@ class Evento_vendedor extends CI_Controller {
 		if($this->session->userdata(IDROL_SESSION)!=ORGA){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
-		if(!$this->Evento_vendedor_model->get($ideveve)){
+		if(!$this->Evento_usuario_model->get($ideveve)){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
 
-		$ideve = $this->Evento_vendedor_model->get($ideveve)->row()->ideve;
+		$ideve = $this->Evento_usuario_model->get($ideveve)->row()->ideve;
 		redirect(EVENTO_GET.'/'.$ideve, 'refresh');
 		
-		$this->Evento_vendedor_model->del($ideveve);
+		$this->Evento_usuario_model->del($ideveve);
 		redirect(EVENTO_GET.'/'.$ideve, 'refresh');
 	}
 }

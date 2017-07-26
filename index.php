@@ -17,7 +17,7 @@ define ('SYS_MODEL','Sys_model');
 define ('USUARIO_MODEL','Usuario_model');
 define ('USUARIO_ROL_MODEL','Usuario_rol_model');
 define ('EVENTO_MODEL','Evento_model');
-define ('EVENTO_VENDEDOR_MODEL','Evento_vendedor_model');
+define ('EVENTO_USUARIO_MODEL','Evento_usuario_model');
 define ('EVENTO_TIPO_ENTRADA_MODEL','Evento_tipo_entrada_model');
 define ('EVENTO_TIPO_ENTRADA_VENDEDOR_MODEL','Evento_tipo_entrada_vendedor_model');
 define ('EVENTO_ENTRADA_MODEL','Evento_entrada_model');

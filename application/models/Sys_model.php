@@ -50,8 +50,8 @@ class Sys_model extends CI_Model{
 		}
 	}
 
-	// Obtiene informacion de usuario vendedores asociada a un evento
-	function getUsuarioVENDByEvento($ideve){
+	// Obtiene informacion de usuarios asociada a un evento (VEND - PORT)
+	function getUsuarioByEvento($ideve,$idrol){
 		$this->db->select(
 			TABLA_EVENTO_USUARIO.'.'.IDEVEVE.','.
 			TABLA_USUARIO_ROL.'.'.NOMBRE.','.
@@ -65,7 +65,7 @@ class Sys_model extends CI_Model{
 			TABLA_USUARIO_ROL.'.'.IDUSU.'='.TABLA_EVENTO_USUARIO.'.'.IDUSU,
 			'INNER'
 		);
-		$this->db->where(TABLA_USUARIO_ROL.'.'.IDROL,VEND);
+		$this->db->where(TABLA_USUARIO_ROL.'.'.IDROL,$idrol);
 		$this->db->where(TABLA_EVENTO_USUARIO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->order_by(1,'ASC');
 		$query=$this->db->get();
@@ -76,33 +76,6 @@ class Sys_model extends CI_Model{
 			return false;
 		}
 	}
-
-	// Obtiene informacion de usuario vendedores asociada a un evento
-	function getUsuarioPORTByEvento($ideve){
-		$this->db->select(
-			TABLA_EVENTO_USUARIO.'.'.IDEVEVE.','.
-			TABLA_USUARIO_ROL.'.'.NOMBRE.','.
-			TABLA_USUARIO_ROL.'.'.APELLIDO.','.
-			TABLA_USUARIO_ROL.'.'.EMAIL
-		);
-		$this->db->where(TABLA_EVENTO_USUARIO.'.'.IDEVE,$ideve);
-		$this->db->from(TABLA_EVENTO_USUARIO);
-		$this->db->join(
-			TABLA_USUARIO_ROL,
-			TABLA_USUARIO_ROL.'.'.IDUSU.'='.TABLA_EVENTO_USUARIO.'.'.IDUSU,
-			'INNER'
-		);
-		$this->db->where(TABLA_USUARIO_ROL.'.'.IDROL,PORT);
-		$this->db->where(TABLA_EVENTO_USUARIO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$this->db->order_by(1,'ASC');
-		$query=$this->db->get();
-
-		if($query->num_rows()>0){
-			return $query;
-		}else{
-			return false;
-		}
-	}	
 
 	// Obtener informacion de tipos de entradas asociadas a un vendedor
 	function getTipoEntradaEventoByVendedor($ideveve){
@@ -131,8 +104,8 @@ class Sys_model extends CI_Model{
 		}
 	}
 	
-	// Obtiene informacion de usuario vendedores no asociada a un evento
-	function getUsuarioVendedorNoIntoEvento($idrol,$ideve){
+	// Obtiene informacion de usuario no asociados a un evento
+	function getUsuarioNoIntoEvento($ideve,$idrol){
 		$this->db->where(TABLA_EVENTO_USUARIO.'.'.IDEVE,$ideve);
 		$this->db->select(
 			TABLA_EVENTO_USUARIO.'.'.IDUSU
@@ -220,9 +193,8 @@ class Sys_model extends CI_Model{
 		}
 	}
 
-	// Obtener informacion de eventos asociados a un vendedor
-	function getEventoByUsuarioVendedor($idusu){
-		$this->db->where(TABLA_EVENTO_USUARIO.'.'.IDUSU,$idusu);
+	// Obtener informacion de eventos asociados a un usuario
+	function getEventoByUsuario($idusu){
 		$this->db->select(
 			TABLA_EVENTO_USUARIO.'.'.IDEVEVE.','.
 			TABLA_EVENTO.'.'.NOMBRE.','.
@@ -230,12 +202,13 @@ class Sys_model extends CI_Model{
 			TABLA_EVENTO.'.'.LIMITE_EMISION
 		);
 		$this->db->from(TABLA_EVENTO_USUARIO);
+		$this->db->where(TABLA_EVENTO_USUARIO.'.'.IDUSU,$idusu);
+		$this->db->where(TABLA_EVENTO_USUARIO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->join(
 			TABLA_EVENTO,
 			TABLA_EVENTO.'.'.IDEVE.'='.TABLA_EVENTO_USUARIO.'.'.IDEVE,
 			'INNER'
 		);
-		$this->db->where(TABLA_EVENTO_USUARIO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->order_by(1,'ASC');
 		$query=$this->db->get();
 		//echo $this->db->last_query();

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Evento_vendedor_model extends CI_Model{
+class Evento_usuario_model extends CI_Model{
 
 	public function __construct(){
 		parent::__construct();

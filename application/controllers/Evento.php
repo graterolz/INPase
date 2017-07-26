@@ -7,7 +7,7 @@ class Evento extends CI_Controller {
 		parent::__construct();
 		$this->load->model(SYS_MODEL);
 		$this->load->model(EVENTO_MODEL);
-		$this->load->model(EVENTO_VENDEDOR_MODEL);
+		$this->load->model(EVENTO_USUARIO_MODEL);
 		$this->load->model(EVENTO_TIPO_ENTRADA_MODEL);
 		$this->load->model(EVENTO_ENTRADA_MODEL);
 		$this->load->model(USUARIO_ROL_MODEL);		
@@ -33,18 +33,17 @@ class Evento extends CI_Controller {
 		if ($this->session->userdata(IDROL_SESSION) == VEND){
 			$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
 			$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
-			$data['evento'] = $this->Sys_model->getEventoByUsuarioVendedor($idusu);
+			$data['evento'] = $this->Sys_model->getEventoByUsuario($idusu);
 			$data['evento_rules'] = $this->Evento_model->evento_rules;
-			$data['evento_vendedor_rules'] = $this->Evento_vendedor_model->evento_vendedor_rules;
+			$data['evento_vendedor_rules'] = $this->Evento_usuario_model->evento_vendedor_rules;
 			$this->load->view(LIST_EVENTO_VEND,$data);
 		}
 		if($this->session->userdata(IDROL_SESSION)==PORT){
-			//redirect(EVENTO_ENTRADA_SEARCH, 'refresh');
 			$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
 			$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
-			$data['evento'] = $this->Sys_model->getEventoByUsuarioVendedor($idusu);
+			$data['evento'] = $this->Sys_model->getEventoByUsuario($idusu);
 			$data['evento_rules'] = $this->Evento_model->evento_rules;
-			$data['evento_vendedor_rules'] = $this->Evento_vendedor_model->evento_vendedor_rules;
+			$data['evento_vendedor_rules'] = $this->Evento_usuario_model->evento_vendedor_rules;
 			$this->load->view(LIST_EVENTO_PORT,$data);
 		}		
 		$this->load->view(FOOTER);
@@ -70,10 +69,10 @@ class Evento extends CI_Controller {
 		$data['evento_tipo_entrada'] = $this->Sys_model->getTipoEntradabyEvento($ideve);
 		$data['evento_tipo_entrada_rules'] = $this->Evento_tipo_entrada_model->evento_tipo_entrada_rules;
 
-		$data['usuario_vendedor'] = $this->Sys_model->getUsuarioVENDByEvento($ideve);
-		$data['usuario_portero'] = $this->Sys_model->getUsuarioPORTByEvento($ideve);
+		$data['usuario_vendedor'] = $this->Sys_model->getUsuarioByEvento($ideve,VEND);
+		$data['usuario_portero'] = $this->Sys_model->getUsuarioByEvento($ideve,PORT);
 		$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
-		$data['evento_vendedor_rules'] = $this->Evento_vendedor_model->evento_vendedor_rules;
+		$data['evento_vendedor_rules'] = $this->Evento_usuario_model->evento_vendedor_rules;
 
 		$this->load->view(HEADER);
 		$this->load->view(MENU);

@@ -8,7 +8,7 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 		$this->load->model(SYS_MODEL);
 		$this->load->model(USUARIO_ROL_MODEL);
 		$this->load->model(EVENTO_MODEL);
-		$this->load->model(EVENTO_VENDEDOR_MODEL);
+		$this->load->model(EVENTO_USUARIO_MODEL);
 		$this->load->model(EVENTO_TIPO_ENTRADA_VENDEDOR_MODEL);
 	}
 
@@ -45,7 +45,7 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 		if($this->session->userdata(IDROL_SESSION)!=ORGA){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
-		if(!$this->Evento_vendedor_model->get($ideveve)){
+		if(!$this->Evento_usuario_model->get($ideveve)){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
 
@@ -62,7 +62,7 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 			redirect(EVENTO_VENDEDOR_GET.'/'.$ideveve, 'refresh');
 		}		
 
-		$idusu = $this->Evento_vendedor_model->get($ideveve)->row()->idusu;
+		$idusu = $this->Evento_usuario_model->get($ideveve)->row()->idusu;
 		$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
 		$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 		$data['evento_tipo_entrada_vendedor_rules']	= $rules;
