@@ -71,7 +71,7 @@ class Evento_usuario extends CI_Controller {
 		if ($this->form_validation->run() == TRUE) {
 			$data = array(
 				IDEVE => $ideve,
-				IDUSU => $this->input->post(NOMBRE_VENDEDOR)
+				IDUSU => $this->input->post(NOMBRE_USUARIO)
 			);
 			$this->Evento_usuario_model->add($data);
 			redirect(EVENTO_GET.'/'.$ideve, 'refresh');
@@ -95,7 +95,7 @@ class Evento_usuario extends CI_Controller {
 		}
 		//
 		$data['evento_usuario'] = $evento_usuario_array;
-		$data['usuario_rol_rules'] = $this->Evento_usuario_model->evento_usuario_rules;
+		$data['evento_usuario_rules'] = $this->Evento_usuario_model->evento_usuario_rules;
 		$data['form_attributes'] = $this->Sys_model->form_attributes;
 
 		$this->load->view(HEADER);

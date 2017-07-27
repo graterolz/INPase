@@ -19,10 +19,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'required' => TRUE,
 			'readonly' => TRUE
 		),
-		NOMBRE_VENDEDOR => array(
+		NOMBRE_USUARIO => array(
 			'class' => 'form-control',
-			'name' => NOMBRE_VENDEDOR,
-			'placeholder' => $evento_entrada_rules[NOMBRE_VENDEDOR]['label'],
+			'name' => NOMBRE_USUARIO,
+			'placeholder' => $evento_entrada_rules[NOMBRE_USUARIO]['label'],
 			'value' => $usuario_vendedor->row()->nombre.' '.$usuario_vendedor->row()->apellido,
 			'required' => TRUE,
 			'readonly' => TRUE            
@@ -76,8 +76,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<br>
 										</div>
 										<div class="col-lg-12">
-											<?= form_label($evento_entrada_rules[NOMBRE_VENDEDOR]['label']);?>
-											<?= form_input($evento_entrada_form[NOMBRE_VENDEDOR]); ?>
+											<?= form_label($evento_entrada_rules[NOMBRE_USUARIO]['label']);?>
+											<?= form_input($evento_entrada_form[NOMBRE_USUARIO]); ?>
 											<br>
 										</div>
 										<div class="col-lg-12">

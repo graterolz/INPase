@@ -17,7 +17,8 @@ INSERT INTO `usuario`
 (NULL, 'VEND', 'user2', 'user2', NOW(), NOW(), 1),
 (NULL, 'PORT', 'user3', 'user3', NOW(), NOW(), 1),
 (NULL, 'VEND', 'user4', 'user4', NOW(), NOW(), 1),
-(NULL, 'VEND', 'user5', 'user5', NOW(), NOW(), 1);
+(NULL, 'VEND', 'user5', 'user5', NOW(), NOW(), 1),
+(NULL, 'PORT', 'user6', 'user6', NOW(), NOW(), 1);
 
 -- usuario_rol OLD(usuario_vendedor)
 DROP TABLE IF EXISTS `usuario_rol`;
@@ -42,7 +43,8 @@ INSERT INTO `usuario_rol`
 (3, 'VEND', 'Vendedor', '#1', '999999999', 'Direccion 1.', 'vendedor1@inpase.com', '@vendedor1', '@vendedor1', '.', NOW(), NOW(), 1),
 (5, 'VEND', 'Vendedor', '#2', '999999999', 'Direccion 1.', 'vendedor2@inpase.com', '@vendedor2', '@vendedor2', '.', NOW(), NOW(), 1),
 (6, 'VEND', 'Vendedor', '#3', '999999999', 'Direccion 1.', 'vendedor3@inpase.com', '@vendedor3', '@vendedor3', '.', NOW(), NOW(), 1),
-(4, 'PORT', 'Portero', '#1', '999999999', 'Direccion 1.', 'portero1@inpase.com', '@portero1', '@portero1', '.', NOW(), NOW(), 1);
+(4, 'PORT', 'Portero', '#1', '999999999', 'Direccion 1.', 'portero1@inpase.com', '@portero1', '@portero1', '.', NOW(), NOW(), 1),
+(7, 'PORT', 'Portero', '#2', '999999999', 'Direccion 1.', 'portero2@inpase.com', '@portero2', '@portero2', '.', NOW(), NOW(), 1);
 
 -- Constraints
 -- ALTER TABLE `usuario_vendedor` DROP FOREIGN KEY `usuario_fk`;

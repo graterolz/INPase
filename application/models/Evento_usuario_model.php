@@ -64,17 +64,11 @@ class Evento_usuario_model extends CI_Model{
 		IDEVEVE => array(
 			'label' => 'IDEVEVE'
 		),		
-		NOMBRE_VENDEDOR => array(
-			'field' => NOMBRE_VENDEDOR,
-			'for' => NOMBRE_VENDEDOR,
-			'label' => 'Nombre del Vendedor',
+		NOMBRE_USUARIO => array(
+			'field' => NOMBRE_USUARIO,
+			'for' => NOMBRE_USUARIO,
+			'label' => 'Nombre del Usuario',
 			'rules' => 'trim|required'
-		),
-		NOMBRE_PORTERO => array(
-			'field' => NOMBRE_PORTERO,
-			'for' => NOMBRE_PORTERO,
-			'label' => 'Nombre del Portero',
-			'rules' => 'trim|required'
-		)		
+		)
 	);
 }

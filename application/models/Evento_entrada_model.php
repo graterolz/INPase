@@ -76,9 +76,9 @@ class Evento_entrada_model extends CI_Model{
 			'label' => 'Nombre del Evento',
 			'rules' => 'trim|required'
 		),
-		NOMBRE_VENDEDOR => array(
-			'field' => NOMBRE_VENDEDOR,
-			'for' => NOMBRE_VENDEDOR,
+		NOMBRE_USUARIO => array(
+			'field' => NOMBRE_USUARIO,
+			'for' => NOMBRE_USUARIO,
 			'label' => 'Nombre del Vendedor',
 			'rules' => 'trim|required'
 		),

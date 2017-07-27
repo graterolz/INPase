@@ -192,8 +192,7 @@ define ('ESTADO_ENTRADA_ASIGNADA','ASIGNADA');
 define ('ESTADO_ENTRADA_VALIDADA','VALIDADA');
 
 // Otros - Literales
-define ('NOMBRE_VENDEDOR','nombre_vendedor');
-define ('NOMBRE_PORTERO','nombre_portero');
+define ('NOMBRE_USUARIO','nombre_usuario');
 define ('NOMBRE_EVENTO', 'nombre_evento');
 define ('TIPO_ENTRADA','tipo_entrada');
 
