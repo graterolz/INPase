@@ -52,6 +52,9 @@ class Evento_usuario extends CI_Controller {
 		if(!$this->session->userdata(IDUSU_SESSION)){
 			redirect(USUARIO_LOGIN, 'refresh');
 		}
+		if($idrol != VEND && $idrol != PORT){
+			redirect(EVENTO_CONTROLLER, 'refresh');
+		}
 		if($ideve == NULL){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}		
@@ -60,7 +63,7 @@ class Evento_usuario extends CI_Controller {
 		}
 		if($this->session->userdata(IDROL_SESSION)!=ORGA){
 			redirect(EVENTO_CONTROLLER, 'refresh');
-		}		
+		}
 
 		$rules = $this->Evento_usuario_model->evento_usuario_rules;
 		$this->form_validation->set_rules($rules);
@@ -84,9 +87,6 @@ class Evento_usuario extends CI_Controller {
 		else if($idrol == PORT){
 			$evento_usuario = $this->Sys_model->getUsuarioNoIntoEvento($ideve,PORT);
 		}
-		else{
-			$evento_usuario = false;
-		}
 		$evento_usuario_array['']='(None)';
 		if($evento_usuario!=false){
 			foreach($evento_usuario->result_array() as $row){
@@ -94,13 +94,18 @@ class Evento_usuario extends CI_Controller {
 			}
 		}
 		//
-		$data['evento_vendedor'] = $evento_usuario_array;
+		$data['evento_usuario'] = $evento_usuario_array;
 		$data['usuario_rol_rules'] = $this->Evento_usuario_model->evento_usuario_rules;
 		$data['form_attributes'] = $this->Sys_model->form_attributes;
 
 		$this->load->view(HEADER);
 		$this->load->view(MENU);
-		$this->load->view(ADD_EVENTO_USUARIO,$data);
+		if($idrol == VEND){
+			$this->load->view(ADD_EVENTO_USUARIO_VEND,$data);
+		}
+		else if($idrol == PORT){
+			$this->load->view(ADD_EVENTO_USUARIO_PORT,$data);
+		}
 		$this->load->view(FOOTER);
 	}
 

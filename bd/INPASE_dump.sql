@@ -131,11 +131,9 @@ INSERT INTO `evento_tipo_entrada_vendedor`
 DROP TABLE IF EXISTS `evento_entrada`;
 CREATE TABLE IF NOT EXISTS `evento_entrada` (
 	`ident` int(10) AUTO_INCREMENT,
-	/*`ideveve` int(10) NOT NULL,*/
 	`ideveteve` int(10) NOT NULL,
 	`nombre_comprador` varchar(50) NOT NULL,
 	`email_comprador` varchar(50) NOT NULL,
-	/*precio_entrada*/
 	`estado_entrada` varchar(50) NOT NULL,
 	`fecha_registro` datetime NOT NULL,
 	`fecha_edicion` datetime NOT NULL,
@@ -145,10 +143,10 @@ CREATE TABLE IF NOT EXISTS `evento_entrada` (
 
 INSERT INTO `evento_entrada`
 (`ident`, `ideveteve`, `nombre_comprador`, `email_comprador`, `estado_entrada`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
-(NULL, 1, 'Pedro Q.','demo@demo.com', 'VENDIDA', NOW(), NOW(), 1),
-(NULL, 1, 'Carlos M.','demo@demo.com', 'VENDIDA', NOW(), NOW(), 1),
-(NULL, 4, 'Andres P.','demo@demo.com', 'VENDIDA', NOW(), NOW(), 1),
-(NULL, 4, 'Carla M.','demo@demo.com', 'VENDIDA', NOW(), NOW(), 1);
+(NULL, 1, 'Pedro Q.','demo@demo.com', 'ASIGNADA', NOW(), NOW(), 1),
+(NULL, 1, 'Carlos M.','demo@demo.com', 'ASIGNADA', NOW(), NOW(), 1),
+(NULL, 4, 'Andres P.','demo@demo.com', 'ASIGNADA', NOW(), NOW(), 1),
+(NULL, 4, 'Carla M.','demo@demo.com', 'ASIGNADA', NOW(), NOW(), 1);
 
 /*
 -- productoras
@@ -174,7 +172,6 @@ CREATE TABLE IF NOT EXISTS `productora` (
 INSERT INTO `productora`
 (`idprod`, `nombre_emp`, `direccion`, `telefono_emp`, `web`, `email_emp`, `nombre_resp`, `email_resp`, `telefono_resp`, `user`, `pass`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
 (NULL, 'Empresa 1', 'empresa1@inpase.com', '999999999', 'S/I', 'S/I', 'Emilio Graterol', 'ejgraterolz@gmail.com', '999999999', 'admin', 'admin', NOW(), NOW(), 1);
-
 -- evento_usuario
 DROP TABLE IF EXISTS `evento_portero`;
 CREATE TABLE IF NOT EXISTS `evento_portero` (
@@ -189,7 +186,6 @@ CREATE TABLE IF NOT EXISTS `evento_portero` (
 INSERT INTO `evento_portero`
 (`idevepo`, `ideve`, `idusu`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
 (NULL, 1, 4, NOW(), NOW(), 1);
-
 -- evento_usuario
 /*DROP TABLE IF EXISTS `evento_portero`;
 CREATE TABLE IF NOT EXISTS `evento_portero` (

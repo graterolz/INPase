@@ -10,58 +10,58 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="row">
 		<div class="col-lg-12">
 <?php
-//var_dump($usuario_vendedor);
+//var_dump($usuario_portero);
 //var_dump($evento_usuario);
-if ($usuario_vendedor){
-	$usuario_vendedor_row = $usuario_vendedor->row();
+if ($usuario_portero){
+	$usuario_portero_row = $usuario_portero->row();
 
-	$usuario_vendedor_form = array(
+	$usuario_portero_form = array(
 		NOMBRE => array(
 			'class' => 'form-control',
 			'name' => NOMBRE,
-			'value' => $usuario_vendedor_row->nombre,
+			'value' => $usuario_portero_row->nombre,
 			'readonly' => TRUE
 		),
 		APELLIDO => array(
 			'class' => 'form-control',
 			'name' => APELLIDO,
-			'value' => $usuario_vendedor_row->apellido,
+			'value' => $usuario_portero_row->apellido,
 			'readonly' => TRUE
 		),
 		TELEFONO => array(
 			'class' => 'form-control',
 			'name' => TELEFONO,
-			'value' => $usuario_vendedor_row->telefono,
+			'value' => $usuario_portero_row->telefono,
 			'readonly' => TRUE
 		),
 		DIRECCION => array(
 			'class' => 'form-control',
 			'name' => DIRECCION,
-			'value' => $usuario_vendedor_row->direccion,
+			'value' => $usuario_portero_row->direccion,
 			'readonly' => TRUE
 		),
 		EMAIL => array(
 			'class' => 'form-control',
 			'name' => EMAIL,
-			'value' => $usuario_vendedor_row->email,
+			'value' => $usuario_portero_row->email,
 			'readonly' => TRUE
 		),
 		FACEBOOK => array(
 			'class' => 'form-control',
 			'name' => FACEBOOK,
-			'value' => $usuario_vendedor_row->facebook,
+			'value' => $usuario_portero_row->facebook,
 			'readonly' => TRUE
 		),
 		TWITTER => array(
 			'class' => 'form-control',
 			'name' => TWITTER,
-			'value' => $usuario_vendedor_row->twitter,
+			'value' => $usuario_portero_row->twitter,
 			'readonly' => TRUE
 		),
 		URL_FOTO => array(
 			'class' => 'form-control',
 			'name' => URL_FOTO,
-			'value' => $usuario_vendedor_row->url_foto,
+			'value' => $usuario_portero_row->url_foto,
 			'readonly' => TRUE
 		)
 	);
@@ -85,7 +85,7 @@ if ($usuario_vendedor){
 								<div class="row">
 									<div class="col-lg-12">
 										<h4>
-											<?= $usuario_vendedor_form[NOMBRE]['value'].' '.$usuario_vendedor_form[APELLIDO]['value'];?>
+											<?= $usuario_portero_form[NOMBRE]['value'].' '.$usuario_portero_form[APELLIDO]['value'];?>
 										</h4>
 									</div>
 								</div>
@@ -93,33 +93,33 @@ if ($usuario_vendedor){
 									<div class="col-lg-4">
 										<div class="form-group">
 											<?= form_label($usuario_rol_rules[TELEFONO]['label'],$usuario_rol_rules[TELEFONO]['field']); ?>
-											<?= form_input($usuario_vendedor_form[TELEFONO]); ?>
+											<?= form_input($usuario_portero_form[TELEFONO]); ?>
 										</div>
 										<div class="form-group">
 											<?= form_label($usuario_rol_rules[FACEBOOK]['label'],$usuario_rol_rules[FACEBOOK]['field']); ?>
-											<?= form_input($usuario_vendedor_form[FACEBOOK]); ?>
+											<?= form_input($usuario_portero_form[FACEBOOK]); ?>
 										</div>
 									</div>
 									<!-- /.col-lg-4 (nested) -->
 									<div class="col-lg-4">
 										<div class="form-group">
 											<?= form_label($usuario_rol_rules[DIRECCION]['label'],$usuario_rol_rules[DIRECCION]['field']); ?>
-											<?= form_input($usuario_vendedor_form[DIRECCION]); ?>
+											<?= form_input($usuario_portero_form[DIRECCION]); ?>
 										</div>
 										<div class="form-group">
 											<?= form_label($usuario_rol_rules[TWITTER]['label'],$usuario_rol_rules[TWITTER]['field']); ?>
-											<?= form_input($usuario_vendedor_form[TWITTER]); ?>
+											<?= form_input($usuario_portero_form[TWITTER]); ?>
 										</div>
 									</div>
 									<!-- /.col-lg-4 (nested) -->
 									<div class="col-lg-4">
 										<div class="form-group">
 											<?= form_label($usuario_rol_rules[EMAIL]['label'],$usuario_rol_rules[EMAIL]['field']); ?>
-											<?= form_input($usuario_vendedor_form[EMAIL]); ?>
+											<?= form_input($usuario_portero_form[EMAIL]); ?>
 										</div>
 										<div class="form-group">
 											<?= form_label($usuario_rol_rules[URL_FOTO]['label'],$usuario_rol_rules[URL_FOTO]['field']); ?>
-											<?= form_input($usuario_vendedor_form[URL_FOTO]); ?>
+											<?= form_input($usuario_portero_form[URL_FOTO]); ?>
 										</div>
 									</div>
 									<!-- /.col-lg-4 (nested) -->

@@ -69,6 +69,12 @@ class Evento_usuario_model extends CI_Model{
 			'for' => NOMBRE_VENDEDOR,
 			'label' => 'Nombre del Vendedor',
 			'rules' => 'trim|required'
-		)
+		),
+		NOMBRE_PORTERO => array(
+			'field' => NOMBRE_PORTERO,
+			'for' => NOMBRE_PORTERO,
+			'label' => 'Nombre del Portero',
+			'rules' => 'trim|required'
+		)		
 	);
 }

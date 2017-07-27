@@ -6,7 +6,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="col-lg-12">
 			<br>
 		</div>
+		<!-- /.col-lg-12 -->
 	</div>
+	<!-- /.row -->
 	<div class="row">
 		<div class="col-lg-12">
 <?php
@@ -37,6 +39,14 @@ if ($evento){
 			'name' => LIMITE_EMISION,
 			'value' => $evento_row->limite_emision,
 			'readonly' => TRUE
+		)
+	);
+
+	$evento_usuario_form = array(
+		NOMBRE_VENDEDOR => array(
+			'class' => 'form-control',
+			'name' => NOMBRE_VENDEDOR,
+			'required' => TRUE	
 		)
 	);
 }
@@ -92,28 +102,19 @@ if ($evento){
 			</div>
 			<!-- /.panel -->
 
-
-<?php
-	$evento_entrada_form = array(
-		IDENT => array(
-			'class' => 'form-control',
-			'name' => IDENT,
-			'placeholder' => $evento_entrada_rules[IDENT]['label'],
-			'required' => TRUE
-		)
-	);
-?>
+			<!-- USUARIO_ROL -->
 			<?= form_open('',$form_attributes);?>
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<div class="row">
 						<div class="col-lg-10">
 							<div class="btn btn-default">
-								<i class="fa fa-ticket fa-fw"></i><strong><?= TITULO_EVENTO_ENTRADA; ?></strong>
+								<i class="fa fa-user fa-fw"></i><strong><?= TITULO_PORTERO; ?></strong>
 							</div>
 						</div>
 						<div class="col-lg-2">
-							<button type="submit" class="btn btn-default"><i class="fa fa-ticket fa-fw"></i><strong>BUSCAR</strong></button>
+							<button type="submit" class="btn btn-default"><i class="fa fa-user fa-fw"></i><strong>NUEVO</strong></button>
+							<!--<a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_ADD_VEND."/".$evento_row->ideve; ?>" class="btn btn-default"><i class="fa fa-user fa-fw"></i><strong>NUEVO</strong></a>-->
 						</div>
 					</div>
 				</div>
@@ -123,48 +124,29 @@ if ($evento){
 							<div class="col-lg-12">
 								<div class="form-group">
 									<div class="row">
-										<div class="col-lg-12">
-											<br>
-											<?= form_label($evento_entrada_rules[IDENT]['label']); ?>
-											<?= form_input($evento_entrada_form[IDENT]); ?>
-											<br>
+										<div class="col-lg-3">
 										</div>
-										<div class="col-lg-12">
-<?php
-	//var_dump($evento_entrada2->result_array());
-	if ($evento_entrada == TRUE){
-		echo '<b>ID de Entrada: </b>'.$evento_entrada->row()->ident.'<br>';
-		echo '<b>Tipo de Entrada: </b>'.$evento_tipo_entrada->row()->descripcion.'<br>';
-		echo '<b>Nombre del Comprador: </b>'.$evento_entrada->row()->nombre_comprador.'<br>';
-		echo '<b>Email del Comprador: </b>'.$evento_entrada->row()->email_comprador.'<br>';
-		echo '<b>Estado de Entrada: </b>'.$evento_entrada->row()->estado_entrada.'<br>';
-		echo '<b>Vendida el dia: </b>'.date("d/m/Y H:m:s", strtotime($evento_entrada->row()->fecha_registro)).'<br>';
-		echo '</br>';
-
-		if($evento_entrada->row()->estado_entrada == ESTADO_ENTRADA_ASIGNADA){
-			echo '<a href="'.base_url(PATH_MENU).'/'.EVENTO_ENTRADA_EDIT.'/'.$evento_entrada->row()->ident.'" class="btn btn-success btn"><i class="fa fa-ticket fa-fw"></i><strong>DAR ACCESO</strong></a>';
-		}else{
-			echo "<b>Entrada validada, Usuario ya ingresado al evento.<b>";
-		}
-	}
-	else{
-		echo $evento_entrada;
-		//echo "string";
-	}
-?>
+										<div class="col-lg-3">
+											<?= form_label($usuario_rol_rules[NOMBRE_PORTERO]['label'],$usuario_rol_rules[NOMBRE_VENDEDOR]['field']); ?>
+										</div>
+										<div class="col-lg-3">
+											<?= form_dropdown(NULL,$evento_usuario,NULL,$evento_usuario_form[NOMBRE_VENDEDOR]); ?>
+										</div>
+										<div class="col-lg-3">
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>			
+				<!-- /.panel -->
 			</div>
-			<?= form_close(); ?>
 			<!-- /.panel -->
+			<?= form_close(); ?>
 		</div>
 		<!-- /.col-lg-12 -->
 	</div>
-	<!-- /.row -->
+	<!-- /.row -->   
 </div>
 <!-- /#page-wrapper -->

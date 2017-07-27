@@ -156,7 +156,8 @@ define ('ADD_EVENTO','evento/add_evento');
 define ('EDIT_EVENTO','evento/edit_evento');
 
 // Vistas EVENTO_USUARIO
-define ('ADD_EVENTO_USUARIO','evento_usuario/add_evento_usuario');
+define ('ADD_EVENTO_USUARIO_VEND','evento_usuario/add_evento_usuario_vend');
+define ('ADD_EVENTO_USUARIO_PORT','evento_usuario/add_evento_usuario_port');
 define ('GET_EVENTO_USUARIO','evento_usuario/get_evento_usuario');
 
 // Vistas EVENTO_ENTRADA
@@ -187,11 +188,12 @@ define ('ESTADO_REGISTRO_ELIMINADO','0');
 define ('ESTADO_REGISTRO_ACTIVO','1');
 
 // Estado de Entradas
-define ('ESTADO_ENTRADA_VENDIDA','VENDIDA');//ASIGNADA
+define ('ESTADO_ENTRADA_ASIGNADA','ASIGNADA');
 define ('ESTADO_ENTRADA_VALIDADA','VALIDADA');
 
 // Otros - Literales
 define ('NOMBRE_VENDEDOR','nombre_vendedor');
+define ('NOMBRE_PORTERO','nombre_portero');
 define ('NOMBRE_EVENTO', 'nombre_evento');
 define ('TIPO_ENTRADA','tipo_entrada');
 

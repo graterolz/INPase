@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if ($usuario_vendedor){
 	$usuario_vendedor_row = $usuario_vendedor->row();
 
-	$usuario_vendedor_form = array(		
+	$usuario_vendedor_form = array(
 		NOMBRE => array(
 			'class' => 'form-control',
 			'name' => NOMBRE,
@@ -129,7 +129,7 @@ if ($usuario_vendedor){
 						<!-- /.col-lg-12 (nested) -->
 					</div>
 					<!-- /.row (nested) -->
-				</div>				
+				</div>
 			</div>
 			<!-- /.panel -->
 
@@ -142,7 +142,7 @@ if ($usuario_vendedor){
 								<i class="fa fa-ticket fa-fw"></i><strong><?= TITULO_EVENTO_TIPO_ENTRADA_VENDEDOR; ?></strong>
 							</div>
 						</div>
-						<div class="col-lg-2">							
+						<div class="col-lg-2">
 							<a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_VENDEDOR_ADD."/".$ideveve; ?>" class="btn btn-default"><i class="fa fa-ticket fa-fw"></i><strong>NUEVO</strong></a>
 						</div>
 					</div>
@@ -187,13 +187,10 @@ if ($usuario_vendedor){
 				</div>
 				<!-- /.panel-body -->
 			</div>
-			<!-- /.panel -->			
-
-
-
+			<!-- /.panel -->
 		</div>
 		<!-- /.col-lg-12 -->
 	</div>
-	<!-- /.row -->   
+	<!-- /.row -->
 </div>
 <!-- /#page-wrapper -->

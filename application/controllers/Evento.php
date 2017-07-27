@@ -10,7 +10,7 @@ class Evento extends CI_Controller {
 		$this->load->model(EVENTO_USUARIO_MODEL);
 		$this->load->model(EVENTO_TIPO_ENTRADA_MODEL);
 		$this->load->model(EVENTO_ENTRADA_MODEL);
-		$this->load->model(USUARIO_ROL_MODEL);		
+		$this->load->model(USUARIO_ROL_MODEL);
 	}
 
 	// Index
@@ -18,9 +18,7 @@ class Evento extends CI_Controller {
 		if(!$this->session->userdata(IDUSU_SESSION)){
 			redirect(USUARIO_LOGIN, 'refresh');
 		}
-		/*if($this->session->userdata(IDROL_SESSION)==PORT){
-			redirect(EVENTO_ENTRADA_SEARCH, 'refresh');
-		}*/
+
 		$idusu = $this->session->userdata(IDUSU_SESSION);
 
 		$this->load->view(HEADER);
@@ -39,7 +37,7 @@ class Evento extends CI_Controller {
 			$this->load->view(LIST_EVENTO_VEND,$data);
 		}
 		if($this->session->userdata(IDROL_SESSION)==PORT){
-			$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
+			$data['usuario_portero'] = $this->Usuario_rol_model->get($idusu);
 			$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 			$data['evento'] = $this->Sys_model->getEventoByUsuario($idusu);
 			$data['evento_rules'] = $this->Evento_model->evento_rules;
@@ -68,7 +66,6 @@ class Evento extends CI_Controller {
 		$data['evento_rules'] = $this->Evento_model->evento_rules;
 		$data['evento_tipo_entrada'] = $this->Sys_model->getTipoEntradabyEvento($ideve);
 		$data['evento_tipo_entrada_rules'] = $this->Evento_tipo_entrada_model->evento_tipo_entrada_rules;
-
 		$data['usuario_vendedor'] = $this->Sys_model->getUsuarioByEvento($ideve,VEND);
 		$data['usuario_portero'] = $this->Sys_model->getUsuarioByEvento($ideve,PORT);
 		$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
@@ -138,7 +135,6 @@ class Evento extends CI_Controller {
 				FECHA => date_create($this->input->post(FECHA)),
 				LIMITE_EMISION => $this->input->post(LIMITE_EMISION)
 			);
-
 			$this->Evento_model->edit($ideve,$data);
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}

@@ -42,7 +42,7 @@ if ($evento){
 		)
 	);
 
-	$evento_vendedor_form = array(
+	$evento_usuario_form = array(
 		NOMBRE_VENDEDOR => array(
 			'class' => 'form-control',
 			'name' => NOMBRE_VENDEDOR,
@@ -130,7 +130,7 @@ if ($evento){
 											<?= form_label($usuario_rol_rules[NOMBRE_VENDEDOR]['label'],$usuario_rol_rules[NOMBRE_VENDEDOR]['field']); ?>
 										</div>
 										<div class="col-lg-3">
-											<?= form_dropdown(NULL,$evento_vendedor,NULL,$evento_vendedor_form[NOMBRE_VENDEDOR]); ?>
+											<?= form_dropdown(NULL,$evento_usuario,NULL,$evento_usuario_form[NOMBRE_VENDEDOR]); ?>
 										</div>
 										<div class="col-lg-3">
 										</div>
