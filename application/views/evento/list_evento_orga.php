@@ -51,6 +51,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</tr>
 <?php
 		}
+	}else{
+?>
+								<tr>
+									<td colspan="8"><center><h3>Sin Eventos asociados.</h3></center></td>
+								</tr>
+<?php
 	}
 ?>
 							</tbody>

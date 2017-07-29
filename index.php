@@ -144,9 +144,6 @@ define ('MENU_LOGOUT','Logout');
 define ('GET_LOGIN','usuario/get_login');
 define ('GET_REGISTER','usuario/get_register');
 
-// Vistas USUARIO_VENDEDOR
-//define ('GET_USUARIO_VENDEDOR','usuario_vendedor/get_usuario_vendedor');
-
 // Vistas EVENTO
 define ('LIST_EVENTO_ORGA','evento/list_evento_orga');
 define ('LIST_EVENTO_VEND','evento/list_evento_vend');

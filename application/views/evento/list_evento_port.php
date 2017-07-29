@@ -171,6 +171,12 @@ if ($usuario_portero){
 								</tr>
 <?php
 		}
+	}else{
+?>
+								<tr>
+									<td colspan="5"><center><h3>Sin Eventos asociados.</h3></center></td>
+								</tr>
+<?php
 	}
 ?>
 							</tbody>
