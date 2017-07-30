@@ -110,9 +110,9 @@ INSERT INTO `evento_tipo_entrada`
 (NULL, 2, 'Hombres', 100, 100, NOW(), NOW(), 1),
 (NULL, 2, 'Mujeres', 150, 100, NOW(), NOW(), 1);
 
--- evento_tipo_entrada_vendedor
-DROP TABLE IF EXISTS `evento_tipo_entrada_vendedor`;
-CREATE TABLE IF NOT EXISTS `evento_tipo_entrada_vendedor` (
+-- evento_tipo_entrada_vend OLD(evento_tipo_entrada_vendedor)
+DROP TABLE IF EXISTS `evento_tipo_entrada_vend`;
+CREATE TABLE IF NOT EXISTS `evento_tipo_entrada_vend` (
 	`ideveteve` int(10) AUTO_INCREMENT,
 	`ideveve` int(10) NOT NULL,
 	`idevete` int(10) NOT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `evento_tipo_entrada_vendedor` (
 	`estado_registro` int(1) NOT NULL,
 	PRIMARY KEY (`ideveteve`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-INSERT INTO `evento_tipo_entrada_vendedor`
+INSERT INTO `evento_tipo_entrada_vend`
 (`ideveteve`, `ideveve`, `idevete`, `cantidad_entrada`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
 (NULL, 1, 1, 200, NOW(), NOW(), 1),
 (NULL, 1, 2, 100, NOW(), NOW(), 1),
@@ -170,10 +170,10 @@ CREATE TABLE IF NOT EXISTS `productora` (
 	`estado_registro` int(1) NOT NULL,
 	PRIMARY KEY (`idprod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 INSERT INTO `productora`
 (`idprod`, `nombre_emp`, `direccion`, `telefono_emp`, `web`, `email_emp`, `nombre_resp`, `email_resp`, `telefono_resp`, `user`, `pass`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
 (NULL, 'Empresa 1', 'empresa1@inpase.com', '999999999', 'S/I', 'S/I', 'Emilio Graterol', 'ejgraterolz@gmail.com', '999999999', 'admin', 'admin', NOW(), NOW(), 1);
+
 -- evento_usuario
 DROP TABLE IF EXISTS `evento_portero`;
 CREATE TABLE IF NOT EXISTS `evento_portero` (
@@ -188,6 +188,7 @@ CREATE TABLE IF NOT EXISTS `evento_portero` (
 INSERT INTO `evento_portero`
 (`idevepo`, `ideve`, `idusu`, `fecha_registro`, `fecha_edicion`, `estado_registro`) VALUES
 (NULL, 1, 4, NOW(), NOW(), 1);
+
 -- evento_usuario
 /*DROP TABLE IF EXISTS `evento_portero`;
 CREATE TABLE IF NOT EXISTS `evento_portero` (

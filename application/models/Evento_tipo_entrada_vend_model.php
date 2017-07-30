@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Evento_tipo_entrada_vendedor_model extends CI_Model{
+class Evento_tipo_entrada_vend_model extends CI_Model{
 
 	public function __construct(){
 		parent::__construct();
@@ -12,7 +12,7 @@ class Evento_tipo_entrada_vendedor_model extends CI_Model{
 	function get($ideveteve){
 		$this->db->where(IDEVETEVE,$ideveteve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$query=$this->db->get(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR);
+		$query=$this->db->get(TABLA_EVENTO_TIPO_ENTRADA_VEND);
 		if($query->num_rows()>0){
 			return $query;
 		}else{
@@ -31,7 +31,7 @@ class Evento_tipo_entrada_vendedor_model extends CI_Model{
 			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
 		);
-		$query=$this->db->insert(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR,$data);
+		$query=$this->db->insert(TABLA_EVENTO_TIPO_ENTRADA_VEND,$data);
 		return $query;
 	}
 
@@ -48,7 +48,7 @@ class Evento_tipo_entrada_vendedor_model extends CI_Model{
 		);
 		$this->db->where(IDEVETEVE,$ideveteve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$query=$this->db->update(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR,$data);
+		$query=$this->db->update(TABLA_EVENTO_TIPO_ENTRADA_VEND,$data);
 		return $query;
 	}
 

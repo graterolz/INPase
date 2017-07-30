@@ -11,7 +11,7 @@ class Evento_entrada extends CI_Controller {
 		$this->load->model(EVENTO_ENTRADA_MODEL);
 		$this->load->model(USUARIO_ROL_MODEL);
 		$this->load->model(EVENTO_TIPO_ENTRADA_MODEL);
-		$this->load->model(EVENTO_TIPO_ENTRADA_VENDEDOR_MODEL);
+		$this->load->model(EVENTO_TIPO_ENTRADA_VEND_MODEL);
 	}
 
 	// Index
@@ -105,7 +105,7 @@ class Evento_entrada extends CI_Controller {
 
 			if ($data['evento_entrada']){
 				$ideveteve = $data['evento_entrada']->row()->ideveteve;
-				$ideveve = $this->Evento_tipo_entrada_vendedor_model->get($ideveteve)->row()->ideveve;
+				$ideveve = $this->Evento_tipo_entrada_vend_model->get($ideveteve)->row()->ideveve;
 				$idevete = $this->Evento_tipo_entrada_model->get($ideveteve)->row()->idevete;
 				$ideve = $this->Evento_usuario_model->get($ideveve)->row()->ideve;
 

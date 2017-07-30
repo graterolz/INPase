@@ -8,7 +8,7 @@ class Evento_usuario extends CI_Controller {
 		$this->load->model(SYS_MODEL);
 		$this->load->model(EVENTO_MODEL);
 		$this->load->model(EVENTO_USUARIO_MODEL);
-		$this->load->model(EVENTO_TIPO_ENTRADA_VENDEDOR_MODEL);
+		$this->load->model(EVENTO_TIPO_ENTRADA_VEND_MODEL);
 		$this->load->model(USUARIO_ROL_MODEL);
 	}
 
@@ -39,7 +39,7 @@ class Evento_usuario extends CI_Controller {
 		$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 		$data['evento_tipo_entrada_vendedor'] = $this->Sys_model->getTipoEntradaEventoByVendedor($ideveve);
 		$data['ideveve'] = $ideveve;
-		$data['evento_tipo_entrada_vendedor_rules']	= $this->Evento_tipo_entrada_vendedor_model->evento_tipo_entrada_vendedor_rules;
+		$data['evento_tipo_entrada_vendedor_rules']	= $this->Evento_tipo_entrada_vend_model->evento_tipo_entrada_vendedor_rules;
 
 		$this->load->view(HEADER);
 		$this->load->view(MENU);

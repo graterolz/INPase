@@ -19,7 +19,7 @@ define ('USUARIO_ROL_MODEL','Usuario_rol_model');
 define ('EVENTO_MODEL','Evento_model');
 define ('EVENTO_USUARIO_MODEL','Evento_usuario_model');
 define ('EVENTO_TIPO_ENTRADA_MODEL','Evento_tipo_entrada_model');
-define ('EVENTO_TIPO_ENTRADA_VENDEDOR_MODEL','Evento_tipo_entrada_vendedor_model');
+define ('EVENTO_TIPO_ENTRADA_VEND_MODEL','Evento_tipo_entrada_vend_model');
 define ('EVENTO_ENTRADA_MODEL','Evento_entrada_model');
 
 // Controladores
@@ -75,7 +75,7 @@ define ('TABLA_USUARIO_ROL','usuario_rol');
 define ('TABLA_EVENTO','evento');
 define ('TABLA_EVENTO_USUARIO','evento_usuario');
 define ('TABLA_EVENTO_TIPO_ENTRADA','evento_tipo_entrada');
-define ('TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR','evento_tipo_entrada_vendedor');
+define ('TABLA_EVENTO_TIPO_ENTRADA_VEND','evento_tipo_entrada_vend');
 define ('TABLA_EVENTO_ENTRADA','evento_entrada');
 
 // Campos Tabla USUARIO

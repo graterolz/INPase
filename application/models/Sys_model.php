@@ -76,19 +76,19 @@ class Sys_model extends CI_Model{
 
 	// Obtener informacion de tipos de entradas asociadas a un vendedor
 	function getTipoEntradaEventoByVendedor($ideveve){
-		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVEVE,$ideveve);
+		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.IDEVEVE,$ideveve);
 		$this->db->select(
-			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVETEVE.','.
+			TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.IDEVETEVE.','.
 			TABLA_EVENTO_TIPO_ENTRADA.'.'.DESCRIPCION.','.
-			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.CANTIDAD_ENTRADA
+			TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.CANTIDAD_ENTRADA
 		);
-		$this->db->from(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR);
+		$this->db->from(TABLA_EVENTO_TIPO_ENTRADA_VEND);
 		$this->db->join(
 			TABLA_EVENTO_TIPO_ENTRADA,
-			TABLA_EVENTO_TIPO_ENTRADA.'.'.IDEVETE.'='.TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVETE,
+			TABLA_EVENTO_TIPO_ENTRADA.'.'.IDEVETE.'='.TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.IDEVETE,
 			'INNER'
 		);
-		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
+		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->order_by(1,'ASC');
 		$query=$this->db->get();
 		//echo $this->db->last_query();
@@ -152,12 +152,12 @@ class Sys_model extends CI_Model{
 			$ideve = 0;
 		}
 
-		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVEVE,$ideveve);
+		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.IDEVEVE,$ideveve);
 		$this->db->select(
-			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVETE
+			TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.IDEVETE
 		);
-		$this->db->from(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR);
-		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
+		$this->db->from(TABLA_EVENTO_TIPO_ENTRADA_VEND);
+		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->get();
 		//echo $this->db->last_query();
 
@@ -231,9 +231,9 @@ class Sys_model extends CI_Model{
 		}
 		//var_dump($data);
 
-		$this->db->select(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVETEVE);
-		$this->db->from(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR);
-		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
+		$this->db->select(TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.IDEVETEVE);
+		$this->db->from(TABLA_EVENTO_TIPO_ENTRADA_VEND);
+		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->where_in(IDEVEVE, $data);
 		$query=$this->db->get();
 		//echo $this->db->last_query();
@@ -263,13 +263,13 @@ class Sys_model extends CI_Model{
 	// Obtiene informacion de entradas asociados a un evento
 	function searchEntrada($ident,$ideve){
 		$this->db->select(
-			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVETEVE
+			TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.IDEVETEVE
 		);
 		$this->db->from(TABLA_EVENTO_USUARIO);
 		$this->db->where(TABLA_EVENTO_USUARIO.'.'.IDEVE,$ideve);
 		$this->db->join(
-			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR,
-			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVEVE.'='.TABLA_EVENTO_USUARIO.'.'.IDEVEVE,
+			TABLA_EVENTO_TIPO_ENTRADA_VEND,
+			TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.IDEVEVE.'='.TABLA_EVENTO_USUARIO.'.'.IDEVEVE,
 			'INNER'
 		);
 		$query=$this->db->get();
