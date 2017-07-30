@@ -133,7 +133,7 @@ if ($usuario_vend){
 			</div>
 			<!-- /.panel -->
 
-			<!-- EVENTO_TIPO_ENTRADA_VENDEDOR -->
+			<!-- EVENTO_TIPO_ENTRADA_VEND -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<div class="row">
@@ -160,15 +160,15 @@ if ($usuario_vend){
 							</thead>
 							<tbody>
 <?php
-	if($evento_tipo_entrada_vendedor){
-		foreach($evento_tipo_entrada_vendedor->result() as $evento_tipo_entrada_vendedor_row){
+	if($evento_tipo_entrada_vend){
+		foreach($evento_tipo_entrada_vend->result() as $evento_tipo_entrada_vend_row){
 ?>
 								<tr>
-									<td><?= $evento_tipo_entrada_vendedor_row->ideveteve; ?></td>
-									<td><?= $evento_tipo_entrada_vendedor_row->descripcion; ?></td>
-									<td><?= $evento_tipo_entrada_vendedor_row->cantidad_entrada; ?></td>
-									<!--<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_VEND_EDIT."/".$evento_tipo_entrada_vendedor_row->ideveteve; ?>" class="btn btn-success btn-xs"><i class="fa fa-edit fa-fw"></i><strong>EDITAR</strong></a></td>-->
-									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_VEND_DEL."/".$evento_tipo_entrada_vendedor_row->ideveteve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
+									<td><?= $evento_tipo_entrada_vend_row->ideveteve; ?></td>
+									<td><?= $evento_tipo_entrada_vend_row->descripcion; ?></td>
+									<td><?= $evento_tipo_entrada_vend_row->cantidad_entrada; ?></td>
+									<!--<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_VEND_EDIT."/".$evento_tipo_entrada_vend_row->ideveteve; ?>" class="btn btn-success btn-xs"><i class="fa fa-edit fa-fw"></i><strong>EDITAR</strong></a></td>-->
+									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_VEND_DEL."/".$evento_tipo_entrada_vend_row->ideveteve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
 								</tr>
 <?php
 		}

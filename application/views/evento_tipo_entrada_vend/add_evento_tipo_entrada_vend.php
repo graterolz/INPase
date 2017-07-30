@@ -66,7 +66,7 @@ if ($usuario_vend){
 		)
 	);
 
-	$evento_tipo_entrada_vendedor_form = array(
+	$evento_tipo_entrada_vend_form = array(
 		TIPO_ENTRADA => array(
 			'class' => 'form-control',
 			'name' => TIPO_ENTRADA,
@@ -147,7 +147,7 @@ if ($usuario_vend){
 			</div>
 			<!-- /.panel -->
 
-			<!-- EVENTO_TIPO_ENTRADA_VENDEDOR -->
+			<!-- EVENTO_TIPO_ENTRADA_VEND -->
 			<?= form_open('',$form_attributes);?>
 			<div class="panel panel-primary">
 				<div class="panel-heading">
@@ -171,13 +171,13 @@ if ($usuario_vend){
 										<div class="col-lg-6">
 											<div class="form-group">
 												<?= form_label($evento_tipo_entrada_vend_rules[TIPO_ENTRADA]['label'],$evento_tipo_entrada_vend_rules[TIPO_ENTRADA]['field']); ?>
-												<?= form_dropdown(NULL,$evento_tipo_entrada_vendedor,NULL,$evento_tipo_entrada_vendedor_form[TIPO_ENTRADA]); ?>
+												<?= form_dropdown(NULL,$evento_tipo_entrada_vend,NULL,$evento_tipo_entrada_vend_form[TIPO_ENTRADA]); ?>
 											</div>
 										</div>
 										<div class="col-lg-6">
 											<div class="form-group">
 												<?= form_label($evento_tipo_entrada_vend_rules[CANTIDAD_ENTRADA]['label'],$evento_tipo_entrada_vend_rules[CANTIDAD_ENTRADA]['field']); ?>
-												<?= form_input($evento_tipo_entrada_vendedor_form[CANTIDAD_ENTRADA]); ?>
+												<?= form_input($evento_tipo_entrada_vend_form[CANTIDAD_ENTRADA]); ?>
 											</div>
 										</div>
 									</div>

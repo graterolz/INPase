@@ -82,7 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										</div>
 										<div class="col-lg-12">
 											<?= form_label($evento_entrada_rules[TIPO_ENTRADA]['label']);?>
-											<?= form_dropdown(NULL,$tipo_entrada_vendedor,NULL,$evento_entrada_form[TIPO_ENTRADA]); ?>
+											<?= form_dropdown(NULL,$tipo_entrada_vend,NULL,$evento_entrada_form[TIPO_ENTRADA]); ?>
 											<br>
 										</div>
 										<div class="col-lg-12">

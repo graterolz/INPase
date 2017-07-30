@@ -67,15 +67,15 @@ class Evento_tipo_entrada_vend extends CI_Controller {
 		$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 		$data['evento_tipo_entrada_vend_rules']	= $rules;
 
-		$evento_tipo_entrada_vendedor = $this->Sys_model->getTipoEntradaVendedorNoIntoVendedor($ideveve);
-		$evento_tipo_entrada_vendedor_array['']='(None)';
+		$evento_tipo_entrada_vend = $this->Sys_model->getTipoEntradaVENDNoIntoVEND($ideveve);
+		$evento_tipo_entrada_vend_array['']='(None)';
 
-		if($evento_tipo_entrada_vendedor!=false){
-			foreach($evento_tipo_entrada_vendedor->result_array() as $row){
-				$evento_tipo_entrada_vendedor_array[$row[IDEVETE]]=$row[DESCRIPCION];
+		if($evento_tipo_entrada_vend!=false){
+			foreach($evento_tipo_entrada_vend->result_array() as $row){
+				$evento_tipo_entrada_vend_array[$row[IDEVETE]]=$row[DESCRIPCION];
 			}
 		}
-		$data['evento_tipo_entrada_vendedor'] = $evento_tipo_entrada_vendedor_array;
+		$data['evento_tipo_entrada_vend'] = $evento_tipo_entrada_vend_array;
 		$data['form_attributes'] = $this->Sys_model->form_attributes;
 
 		$this->load->view(HEADER);

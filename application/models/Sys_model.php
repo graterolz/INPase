@@ -75,7 +75,7 @@ class Sys_model extends CI_Model{
 	}
 
 	// Obtener informacion de tipos de entradas asociadas a un vendedor
-	function getTipoEntradaEventoByVendedor($ideveve){
+	function getTipoEntradaEventoByVEND($ideveve){
 		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.IDEVEVE,$ideveve);
 		$this->db->select(
 			TABLA_EVENTO_TIPO_ENTRADA_VEND.'.'.IDEVETEVE.','.
@@ -142,7 +142,7 @@ class Sys_model extends CI_Model{
 	}
 
 	//
-	function getTipoEntradaVendedorNoIntoVendedor($ideveve){
+	function getTipoEntradaVENDNoIntoVEND($ideveve){
 		$this->db->where(IDEVEVE,$ideveve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->get(TABLA_EVENTO_USUARIO);

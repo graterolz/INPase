@@ -160,14 +160,14 @@ class Evento_entrada extends CI_Controller {
 		$data['evento_entrada_rules'] = $rules;
 		$data['usuario_vend'] = $this->Usuario_rol_model->get($idusu);
 		//
-		$tipo_entrada_vendedor = $this->Sys_model->getTipoEntradaEventoByVendedor($ideveve);
-		$tipo_entrada_vendedor_array['']='(None)';
-		if($tipo_entrada_vendedor!=false){
-			foreach($tipo_entrada_vendedor->result_array() as $row){
-				$tipo_entrada_vendedor_array[$row[IDEVETEVE]]=$row[DESCRIPCION].'- Cantidad: ('.$row[CANTIDAD_ENTRADA].')';
+		$tipo_entrada_vend = $this->Sys_model->getTipoEntradaEventoByVEND($ideveve);
+		$tipo_entrada_vend_array['']='(None)';
+		if($tipo_entrada_vend!=false){
+			foreach($tipo_entrada_vend->result_array() as $row){
+				$tipo_entrada_vend_array[$row[IDEVETEVE]]=$row[DESCRIPCION].'- Cantidad: ('.$row[CANTIDAD_ENTRADA].')';
 			}
 		}
-		$data['tipo_entrada_vendedor'] = $tipo_entrada_vendedor_array;
+		$data['tipo_entrada_vend'] = $tipo_entrada_vend_array;
 		$data['form_attributes'] = $this->Sys_model->form_attributes;
 
 		$this->load->view(HEADER);
