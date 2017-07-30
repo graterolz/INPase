@@ -13,7 +13,7 @@ class Usuario_rol extends CI_Controller {
 	}
 	
 	//
-	function get($idusu){
+	function get($$idusu = NULL){
 		redirect(EVENTO_CONTROLLER, 'refresh');
 	}
 
@@ -23,12 +23,12 @@ class Usuario_rol extends CI_Controller {
 	}
 
 	//
-	function edit($idusu,$data){
+	function edit($$idusu = NULL,$data){
 		redirect(EVENTO_CONTROLLER, 'refresh');
 	}
 
 	//
-	function del($idusu){
+	function del($$idusu = NULL){
 		redirect(EVENTO_CONTROLLER, 'refresh');
 	}
 }

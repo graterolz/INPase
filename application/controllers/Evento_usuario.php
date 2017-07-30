@@ -57,7 +57,7 @@ class Evento_usuario extends CI_Controller {
 		}
 		if($ideve == NULL){
 			redirect(EVENTO_CONTROLLER, 'refresh');
-		}		
+		}
 		if(!$this->Evento_model->get($ideve)){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
@@ -79,7 +79,6 @@ class Evento_usuario extends CI_Controller {
 
 		$data['evento'] = $this->Evento_model->get($ideve);
 		$data['evento_rules'] = $this->Evento_model->evento_rules;
-		//
 
 		if($idrol == VEND){
 			$evento_usuario = $this->Sys_model->getUsuarioNoIntoEvento($ideve,VEND);
@@ -93,7 +92,7 @@ class Evento_usuario extends CI_Controller {
 				$evento_usuario_array[$row[IDUSU]]=$row[NOMBRE].' '.$row[APELLIDO].' - '.$row[EMAIL];
 			}
 		}
-		//
+
 		$data['evento_usuario'] = $evento_usuario_array;
 		$data['evento_usuario_rules'] = $this->Evento_usuario_model->evento_usuario_rules;
 		$data['form_attributes'] = $this->Sys_model->form_attributes;
@@ -121,7 +120,7 @@ class Evento_usuario extends CI_Controller {
 		}
 		if($ideveve == NULL){
 			redirect(EVENTO_CONTROLLER, 'refresh');
-		}		
+		}
 		if($this->session->userdata(IDROL_SESSION)!=ORGA){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}

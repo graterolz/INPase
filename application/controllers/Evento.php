@@ -43,7 +43,7 @@ class Evento extends CI_Controller {
 			$data['evento_rules'] = $this->Evento_model->evento_rules;
 			$data['evento_usuario_rules'] = $this->Evento_usuario_model->evento_usuario_rules;
 			$this->load->view(LIST_EVENTO_PORT,$data);
-		}		
+		}
 		$this->load->view(FOOTER);
 	}
 

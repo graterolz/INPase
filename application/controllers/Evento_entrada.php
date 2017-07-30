@@ -64,6 +64,7 @@ class Evento_entrada extends CI_Controller {
 		if($this->session->userdata(IDROL_SESSION)!=VEND){
 			redirect(USUARIO_CONTROLLER, 'refresh');
 		}
+
 		$ideve = $this->Evento_usuario_model->get($ideveve)->row()->ideve;
 		$data['evento'] = $this->Evento_model->get($ideve);
 		$data['evento_rules'] = $this->Evento_model->evento_rules;
@@ -83,7 +84,7 @@ class Evento_entrada extends CI_Controller {
 		}
 		if($ideveve == NULL){
 			redirect(EVENTO_CONTROLLER, 'refresh');
-		}		
+		}
 		if($this->session->userdata(IDROL_SESSION)!=PORT){
 			redirect(USUARIO_CONTROLLER, 'refresh');
 		}
@@ -104,12 +105,10 @@ class Evento_entrada extends CI_Controller {
 
 			if ($data['evento_entrada']){
 				$ideveteve = $data['evento_entrada']->row()->ideveteve;
-				//
 				$ideveve = $this->Evento_tipo_entrada_vendedor_model->get($ideveteve)->row()->ideveve;
 				$idevete = $this->Evento_tipo_entrada_model->get($ideveteve)->row()->idevete;
-				//
 				$ideve = $this->Evento_usuario_model->get($ideveve)->row()->ideve;
-				//
+
 				$data['evento'] = $this->Evento_model->get($ideve);
 				$data['evento_tipo_entrada'] = $this->Evento_tipo_entrada_model->get($idevete);
 			}
@@ -168,7 +167,6 @@ class Evento_entrada extends CI_Controller {
 				$tipo_entrada_vendedor_array[$row[IDEVETEVE]]=$row[DESCRIPCION].'- Cantidad: ('.$row[CANTIDAD_ENTRADA].')';
 			}
 		}
-		//
 		$data['tipo_entrada_vendedor'] = $tipo_entrada_vendedor_array;
 		$data['form_attributes'] = $this->Sys_model->form_attributes;
 

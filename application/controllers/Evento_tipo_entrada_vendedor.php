@@ -24,7 +24,7 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 		}
 		if($ideveteve == NULL){
 			redirect(EVENTO_CONTROLLER, 'refresh');
-		}		
+		}
 		if($this->session->userdata(IDROL_SESSION)!=ORGA){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
@@ -41,7 +41,7 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 		}
 		if($ideveve == NULL){
 			redirect(EVENTO_CONTROLLER, 'refresh');
-		}		
+		}
 		if($this->session->userdata(IDROL_SESSION)!=ORGA){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
@@ -60,13 +60,13 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 			);
 			$this->Evento_tipo_entrada_vendedor_model->add($data);
 			redirect(EVENTO_USUARIO_GET.'/'.$ideveve, 'refresh');
-		}		
+		}
 
 		$idusu = $this->Evento_usuario_model->get($ideveve)->row()->idusu;
 		$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
 		$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 		$data['evento_tipo_entrada_vendedor_rules']	= $rules;
-		//
+
 		$evento_tipo_entrada_vendedor = $this->Sys_model->getTipoEntradaVendedorNoIntoVendedor($ideveve);
 		$evento_tipo_entrada_vendedor_array['']='(None)';
 
@@ -109,7 +109,7 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 		}
 		if($ideveteve == NULL){
 			redirect(EVENTO_CONTROLLER, 'refresh');
-		}		
+		}
 		if($this->session->userdata(IDROL_SESSION)!=ORGA){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}

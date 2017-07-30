@@ -45,10 +45,9 @@ class Evento_tipo_entrada extends CI_Controller {
 				PRECIO => $this->input->post(PRECIO),
 				CANTIDAD => $this->input->post(CANTIDAD)
 			);
-
 			$this->Evento_tipo_entrada_model->add($data);
 			redirect(EVENTO_GET.'/'.$ideve, 'refresh');
-		}		
+		}
 		
 		$data['evento'] = $this->Evento_model->get($ideve);
 		$data['evento_rules'] = $this->Evento_model->evento_rules;
@@ -56,7 +55,7 @@ class Evento_tipo_entrada extends CI_Controller {
 		$data['form_attributes'] = $this->Sys_model->form_attributes;
 
 		$this->load->view(HEADER);
-		$this->load->view(MENU);		
+		$this->load->view(MENU);
 		$this->load->view(ADD_EVENTO_TIPO_ENTRADA,$data);
 		$this->load->view(FOOTER);
 	}
@@ -86,7 +85,6 @@ class Evento_tipo_entrada extends CI_Controller {
 				PRECIO => $this->input->post(PRECIO),
 				CANTIDAD => $this->input->post(CANTIDAD)
 			);
-
 			$this->Evento_tipo_entrada_model->edit($idevete,$data);
 			redirect(EVENTO_GET.'/'.$ideve, 'refresh');
 		}
@@ -110,7 +108,7 @@ class Evento_tipo_entrada extends CI_Controller {
 		}
 		if($idevete == NULL){
 			redirect(EVENTO_CONTROLLER, 'refresh');
-		}		
+		}
 		if($this->session->userdata(IDROL_SESSION)!=ORGA){
 			redirect(TIPO_ENTRADA_CONTROLLER, 'refresh');
 		}

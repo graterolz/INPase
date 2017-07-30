@@ -38,7 +38,6 @@ class Usuario extends CI_Controller {
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
 		else if ($this->session->userdata(IDROL_SESSION) == PORT){
-			//redirect(EVENTO_ENTRADA_SEARCH, 'refresh');
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}else{
 			$this->logout();
@@ -53,7 +52,7 @@ class Usuario extends CI_Controller {
 	function login(){
 		if($this->session->userdata(IDUSU_SESSION)){
 			redirect(USUARIO_CONTROLLER, 'refresh');
-		}		
+		}
 		if($this->input->post(USER) && $this->input->post(PASS)){
 			$data = array(
 				USER => $this->input->post(USER),
@@ -72,7 +71,7 @@ class Usuario extends CI_Controller {
 		}
 		if($this->session->userdata(IDUSU_SESSION)){
 			redirect(USUARIO_CONTROLLER, 'refresh');
-		}		
+		}
 
 		$this->load->view(HEADER);
 		$this->load->view(GET_LOGIN);
@@ -84,7 +83,7 @@ class Usuario extends CI_Controller {
 		redirect(USUARIO_CONTROLLER, 'refresh');
 		if($this->session->userdata(IDUSU_SESSION)){
 			redirect(USUARIO_CONTROLLER, 'refresh');
-		}		
+		}
 		$this->load->view(HEADER);
 		$this->load->view(GET_REGISTER);
 		$this->load->view(FOOTER);
