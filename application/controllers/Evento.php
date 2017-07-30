@@ -29,7 +29,7 @@ class Evento extends CI_Controller {
 			$this->load->view(LIST_EVENTO_ORGA,$data);
 		}
 		if ($this->session->userdata(IDROL_SESSION) == VEND){
-			$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
+			$data['usuario_vend'] = $this->Usuario_rol_model->get($idusu);
 			$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 			$data['evento'] = $this->Sys_model->getEventoByUsuario($idusu);
 			$data['evento_rules'] = $this->Evento_model->evento_rules;
@@ -37,7 +37,7 @@ class Evento extends CI_Controller {
 			$this->load->view(LIST_EVENTO_VEND,$data);
 		}
 		if($this->session->userdata(IDROL_SESSION)==PORT){
-			$data['usuario_portero'] = $this->Usuario_rol_model->get($idusu);
+			$data['usuario_port'] = $this->Usuario_rol_model->get($idusu);
 			$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 			$data['evento'] = $this->Sys_model->getEventoByUsuario($idusu);
 			$data['evento_rules'] = $this->Evento_model->evento_rules;
@@ -66,8 +66,8 @@ class Evento extends CI_Controller {
 		$data['evento_rules'] = $this->Evento_model->evento_rules;
 		$data['evento_tipo_entrada'] = $this->Sys_model->getTipoEntradabyEvento($ideve);
 		$data['evento_tipo_entrada_rules'] = $this->Evento_tipo_entrada_model->evento_tipo_entrada_rules;
-		$data['usuario_vendedor'] = $this->Sys_model->getUsuarioByEvento($ideve,VEND);
-		$data['usuario_portero'] = $this->Sys_model->getUsuarioByEvento($ideve,PORT);
+		$data['usuario_vend'] = $this->Sys_model->getUsuarioByEvento($ideve,VEND);
+		$data['usuario_port'] = $this->Sys_model->getUsuarioByEvento($ideve,PORT);
 		$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 		$data['evento_usuario_rules'] = $this->Evento_usuario_model->evento_usuario_rules;
 

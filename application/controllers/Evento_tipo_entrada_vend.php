@@ -49,7 +49,7 @@ class Evento_tipo_entrada_vend extends CI_Controller {
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}
 
-		$rules = $this->Evento_tipo_entrada_vend_model->evento_tipo_entrada_vendedor_rules;
+		$rules = $this->Evento_tipo_entrada_vend_model->evento_tipo_entrada_vend_rules;
 		$this->form_validation->set_rules($rules);
 
 		if ($this->form_validation->run() == TRUE) {
@@ -63,9 +63,9 @@ class Evento_tipo_entrada_vend extends CI_Controller {
 		}
 
 		$idusu = $this->Evento_usuario_model->get($ideveve)->row()->idusu;
-		$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
+		$data['usuario_vend'] = $this->Usuario_rol_model->get($idusu);
 		$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
-		$data['evento_tipo_entrada_vendedor_rules']	= $rules;
+		$data['evento_tipo_entrada_vend_rules']	= $rules;
 
 		$evento_tipo_entrada_vendedor = $this->Sys_model->getTipoEntradaVendedorNoIntoVendedor($ideveve);
 		$evento_tipo_entrada_vendedor_array['']='(None)';

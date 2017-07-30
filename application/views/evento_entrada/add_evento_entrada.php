@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'class' => 'form-control',
 			'name' => NOMBRE_USUARIO,
 			'placeholder' => $evento_entrada_rules[NOMBRE_USUARIO]['label'],
-			'value' => $usuario_vendedor->row()->nombre.' '.$usuario_vendedor->row()->apellido,
+			'value' => $usuario_vend->row()->nombre.' '.$usuario_vend->row()->apellido,
 			'required' => TRUE,
 			'readonly' => TRUE            
 		),

@@ -134,7 +134,7 @@ if ($evento){
 	//var_dump($evento_entrada2->result_array());
 	if ($evento_entrada == TRUE){
 		echo '<b>ID de Entrada: </b>'.$evento_entrada->row()->ident.'<br>';
-		echo '<b>Tipo de Entrada: </b>'.$evento_tipo_entrada->row()->descripcion.'<br>';
+		// echo '<b>Tipo de Entrada: </b>'.$evento_tipo_entrada->row()->descripcion.'<br>';
 		echo '<b>Nombre del Comprador: </b>'.$evento_entrada->row()->nombre_comprador.'<br>';
 		echo '<b>Email del Comprador: </b>'.$evento_entrada->row()->email_comprador.'<br>';
 		echo '<b>Estado de Entrada: </b>'.$evento_entrada->row()->estado_entrada.'<br>';

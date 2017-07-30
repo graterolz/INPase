@@ -152,7 +152,7 @@ if ($evento){
 			</div>
 			<!-- /.panel -->
 
-			<!-- USUARIO_ROL -->
+			<!-- USUARIO_VEND -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<div class="row">
@@ -180,16 +180,16 @@ if ($evento){
 							</thead>
 							<tbody>
 <?php
-	if($usuario_vendedor){
-		foreach($usuario_vendedor->result() as $usuario_vendedor_row){
+	if($usuario_vend){
+		foreach($usuario_vend->result() as $usuario_vend_row){
 ?>
 								<tr>
-									<td><?= $usuario_vendedor_row->ideveve; ?></td>
-									<td><?= $usuario_vendedor_row->nombre; ?></td>
-									<td><?= $usuario_vendedor_row->apellido; ?></td>
-									<td><?= $usuario_vendedor_row->email; ?></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_GET."/".$usuario_vendedor_row->ideveve; ?>" class="btn btn-success btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER</strong></a></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_DEL."/".$usuario_vendedor_row->ideveve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
+									<td><?= $usuario_vend_row->ideveve; ?></td>
+									<td><?= $usuario_vend_row->nombre; ?></td>
+									<td><?= $usuario_vend_row->apellido; ?></td>
+									<td><?= $usuario_vend_row->email; ?></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_GET."/".$usuario_vend_row->ideveve; ?>" class="btn btn-success btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_DEL."/".$usuario_vend_row->ideveve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
 								</tr>
 <?php
 		}
@@ -210,7 +210,7 @@ if ($evento){
 			</div>
 			<!-- /.panel -->
 
-			<!-- USUARIO_PORTERO -->
+			<!-- USUARIO_PORT -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<div class="row">
@@ -238,16 +238,16 @@ if ($evento){
 							</thead>
 							<tbody>
 <?php
-	if($usuario_portero){
-		foreach($usuario_portero->result() as $usuario_portero_row){
+	if($usuario_port){
+		foreach($usuario_port->result() as $usuario_port_row){
 ?>
 								<tr>
-									<td><?= $usuario_portero_row->ideveve; ?></td>
-									<td><?= $usuario_portero_row->nombre; ?></td>
-									<td><?= $usuario_portero_row->apellido; ?></td>
-									<td><?= $usuario_portero_row->email; ?></td>
-									<!--<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_GET."/".$usuario_portero_row->ideveve; ?>" class="btn btn-success btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER</strong></a></td>-->
-									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_DEL."/".$usuario_portero_row->ideveve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
+									<td><?= $usuario_port_row->ideveve; ?></td>
+									<td><?= $usuario_port_row->nombre; ?></td>
+									<td><?= $usuario_port_row->apellido; ?></td>
+									<td><?= $usuario_port_row->email; ?></td>
+									<!--<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_GET."/".$usuario_port_row->ideveve; ?>" class="btn btn-success btn-xs"><i class="fa fa-search fa-fw"></i><strong>VER</strong></a></td>-->
+									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_USUARIO_DEL."/".$usuario_port_row->ideveve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
 								</tr>
 <?php
 		}

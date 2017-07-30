@@ -53,7 +53,7 @@ class Evento_tipo_entrada_vend_model extends CI_Model{
 	}
 
 	// Reglas para formularios
-	public $evento_tipo_entrada_vendedor_rules = array(
+	public $evento_tipo_entrada_vend_rules = array(
 		IDEVETEVE => array(
 			'label' => 'IDEVETEVE',
 		),

@@ -158,7 +158,7 @@ class Evento_entrada extends CI_Controller {
 
 		$rules = $this->Evento_entrada_model->evento_entrada_rules;
 		$data['evento_entrada_rules'] = $rules;
-		$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
+		$data['usuario_vend'] = $this->Usuario_rol_model->get($idusu);
 		//
 		$tipo_entrada_vendedor = $this->Sys_model->getTipoEntradaEventoByVendedor($ideveve);
 		$tipo_entrada_vendedor_array['']='(None)';

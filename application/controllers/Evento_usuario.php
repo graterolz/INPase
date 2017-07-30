@@ -35,11 +35,11 @@ class Evento_usuario extends CI_Controller {
 
 		$idusu = $this->Evento_usuario_model->get($ideveve)->row()->idusu;
 		
-		$data['usuario_vendedor'] = $this->Usuario_rol_model->get($idusu);
+		$data['usuario_vend'] = $this->Usuario_rol_model->get($idusu);
 		$data['usuario_rol_rules'] = $this->Usuario_rol_model->usuario_rol_rules;
 		$data['evento_tipo_entrada_vendedor'] = $this->Sys_model->getTipoEntradaEventoByVendedor($ideveve);
 		$data['ideveve'] = $ideveve;
-		$data['evento_tipo_entrada_vendedor_rules']	= $this->Evento_tipo_entrada_vend_model->evento_tipo_entrada_vendedor_rules;
+		$data['evento_tipo_entrada_vend_rules']	= $this->Evento_tipo_entrada_vend_model->evento_tipo_entrada_vend_rules;
 
 		$this->load->view(HEADER);
 		$this->load->view(MENU);
