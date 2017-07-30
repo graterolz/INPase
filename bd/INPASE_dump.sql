@@ -47,8 +47,8 @@ INSERT INTO `usuario_rol`
 (7, 'PORT', 'Portero', '#2', '999999999', 'Direccion 1.', 'portero2@inpase.com', '@portero2', '@portero2', '.', NOW(), NOW(), 1);
 
 -- Constraints
--- ALTER TABLE `usuario_vendedor` DROP FOREIGN KEY `usuario_fk`;
--- ALTER TABLE `usuario_vendedor` ADD CONSTRAINT `usuario_fk` FOREIGN KEY (`idusu`) REFERENCES `usuario` (`idusu`) ON DELETE CASCADE ON UPDATE CASCADE; 
+-- ALTER TABLE `usuario_rol` DROP FOREIGN KEY `usuario_fk`;
+-- ALTER TABLE `usuario_rol` ADD CONSTRAINT `usuario_fk` FOREIGN KEY (`idusu`) REFERENCES `usuario` (`idusu`) ON DELETE CASCADE ON UPDATE CASCADE; 
 
 -- evento
 DROP TABLE IF EXISTS `evento`;

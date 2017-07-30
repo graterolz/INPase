@@ -35,7 +35,7 @@ class Usuario_rol_model extends CI_Model{
 			FECHA_REGISTRO => date(FORMATO_FECHA_SAVE),
 			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
-		);		
+		);
 		$query=$this->db->insert(TABLA_USUARIO_ROL,$data);
 		return $query;
 	}
@@ -52,7 +52,7 @@ class Usuario_rol_model extends CI_Model{
 			TWITTER => $data[TWITTER],
 			URL_FOTO => $data[URL_FOTO],
 			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
-		);		
+		);
 		$this->db->where(IDUSU,$idusu);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->update(TABLA_USUARIO_ROL,$data);

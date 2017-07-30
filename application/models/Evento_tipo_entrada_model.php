@@ -44,7 +44,7 @@ class Evento_tipo_entrada_model extends CI_Model{
 			PRECIO => $data[PRECIO],
 			CANTIDAD => $data[CANTIDAD],
 			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
-		);		
+		);
 		$this->db->where(IDEVETE,$idevete);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->update(TABLA_EVENTO_TIPO_ENTRADA,$data);
@@ -56,7 +56,7 @@ class Evento_tipo_entrada_model extends CI_Model{
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,
 			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
-		);		
+		);
 		$this->db->where(IDEVETE,$idevete);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->update(TABLA_EVENTO_TIPO_ENTRADA,$data);
@@ -66,7 +66,7 @@ class Evento_tipo_entrada_model extends CI_Model{
 	// Reglas para formularios
 	public $evento_tipo_entrada_rules = array(
 		IDEVETE => array(
-			'label' => 'IDEVETE',
+			'label' => 'IDEVETE'
 		),
 		DESCRIPCION => array(
 			'field' => DESCRIPCION,

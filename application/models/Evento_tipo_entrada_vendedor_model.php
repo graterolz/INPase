@@ -51,42 +51,7 @@ class Evento_tipo_entrada_vendedor_model extends CI_Model{
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->update(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR,$data);
 		return $query;
-	}	
-
-	// Obtener informacion de evento_tipo_entrada_vendedor
-	/*
-	function get($ideve = NULL,$idusu = NULL){
-		if($ideve!=NULL){
-			$this->db->where(IDEVE,$ideve);
-		}		
-		if($idusu!=NULL){
-			$this->db->where(IDUSU,$idusu);
-		}
-
-		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$query=$this->db->get(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR);
-
-		if($query->num_rows()>0){
-			return $query;
-		}else{
-			return false;
-		}
 	}
-
-	// Insertar informacion de evento_tipo_entrada_vendedor
-	function add($data){
-		return false;
-	}
-
-	// Editar informacion de evento_tipo_entrada_vendedor
-	function edit($ideve){
-		return false;
-	}
-	// Eliminar informacion de evento_tipo_entrada_vendedor
-	function del($ideve){
-		return false;
-	}
-	*/
 
 	// Reglas para formularios
 	public $evento_tipo_entrada_vendedor_rules = array(

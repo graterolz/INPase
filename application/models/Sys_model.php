@@ -271,7 +271,7 @@ class Sys_model extends CI_Model{
 	function searchEntrada($ident,$ideve){
 		$this->db->select(
 			TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.IDEVETEVE
-		);		
+		);
 		$this->db->from(TABLA_EVENTO_USUARIO);
 		$this->db->where(TABLA_EVENTO_USUARIO.'.'.IDEVE,$ideve);
 		$this->db->join(
@@ -301,5 +301,5 @@ class Sys_model extends CI_Model{
 		}else{
 			return false;
 		}
-	}	
+	}
 }

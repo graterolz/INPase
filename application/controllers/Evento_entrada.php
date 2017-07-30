@@ -91,8 +91,6 @@ class Evento_entrada extends CI_Controller {
 		$ideve = $this->Evento_usuario_model->get($ideveve)->row()->ideve;
 		$data['evento'] = $this->Evento_model->get($ideve);
 		$data['evento_tipo_entrada'] =
-
-
 		$data['evento_rules'] = $this->Evento_model->evento_rules;
 
 		$rules = $this->Evento_entrada_model->evento_entrada_rules_search;
@@ -102,9 +100,6 @@ class Evento_entrada extends CI_Controller {
 
 		if ($this->form_validation->run() == TRUE) {
 			$ident = $this->input->post(IDENT);
-
-
-			//$data['evento_entrada'] = $this->Evento_entrada_model->get($ident);
 			$data['evento_entrada'] = $this->Sys_model->searchEntrada($ident,$ideve);
 
 			if ($data['evento_entrada']){
