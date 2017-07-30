@@ -139,11 +139,11 @@ if ($usuario_vendedor){
 					<div class="row">
 						<div class="col-lg-10">
 							<div class="btn btn-default">
-								<i class="fa fa-ticket fa-fw"></i><strong><?= TITULO_EVENTO_TIPO_ENTRADA_VENDEDOR; ?></strong>
+								<i class="fa fa-ticket fa-fw"></i><strong><?= TITULO_EVENTO_TIPO_ENTRADA_VEND; ?></strong>
 							</div>
 						</div>
 						<div class="col-lg-2">
-							<a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_VENDEDOR_ADD."/".$ideveve; ?>" class="btn btn-default"><i class="fa fa-ticket fa-fw"></i><strong>NUEVO</strong></a>
+							<a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_VEND_ADD."/".$ideveve; ?>" class="btn btn-default"><i class="fa fa-ticket fa-fw"></i><strong>NUEVO</strong></a>
 						</div>
 					</div>
 				</div>
@@ -167,8 +167,8 @@ if ($usuario_vendedor){
 									<td><?= $evento_tipo_entrada_vendedor_row->ideveteve; ?></td>
 									<td><?= $evento_tipo_entrada_vendedor_row->descripcion; ?></td>
 									<td><?= $evento_tipo_entrada_vendedor_row->cantidad_entrada; ?></td>
-									<!--<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_VENDEDOR_EDIT."/".$evento_tipo_entrada_vendedor_row->ideveteve; ?>" class="btn btn-success btn-xs"><i class="fa fa-edit fa-fw"></i><strong>EDITAR</strong></a></td>-->
-									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_VENDEDOR_DEL."/".$evento_tipo_entrada_vendedor_row->ideveteve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
+									<!--<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_VEND_EDIT."/".$evento_tipo_entrada_vendedor_row->ideveteve; ?>" class="btn btn-success btn-xs"><i class="fa fa-edit fa-fw"></i><strong>EDITAR</strong></a></td>-->
+									<td><a href="<?= base_url(PATH_MENU)."/".EVENTO_TIPO_ENTRADA_VEND_DEL."/".$evento_tipo_entrada_vendedor_row->ideveteve; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i><strong>ELIMINAR</strong></a></td>
 								</tr>
 <?php
 		}

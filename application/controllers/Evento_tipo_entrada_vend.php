@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Evento_tipo_entrada_vendedor extends CI_Controller {
+class Evento_tipo_entrada_vend extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
@@ -80,7 +80,7 @@ class Evento_tipo_entrada_vendedor extends CI_Controller {
 
 		$this->load->view(HEADER);
 		$this->load->view(MENU);
-		$this->load->view(ADD_EVENTO_TIPO_ENTRADA_VENDEDOR,$data);
+		$this->load->view(ADD_EVENTO_TIPO_ENTRADA_VEND,$data);
 		$this->load->view(FOOTER);
 	}
 

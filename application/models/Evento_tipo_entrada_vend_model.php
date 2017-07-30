@@ -8,7 +8,7 @@ class Evento_tipo_entrada_vend_model extends CI_Model{
 		$this->load->database();
 	}
 
-	// Obtener informacion de evento_tipo_entrada_vendedor
+	// Obtener informacion de evento_tipo_entrada_vend
 	function get($ideveteve){
 		$this->db->where(IDEVETEVE,$ideveteve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
@@ -20,7 +20,7 @@ class Evento_tipo_entrada_vend_model extends CI_Model{
 		}
 	}
 
-	// Insertar informacion de evento_tipo_entrada_vendedor
+	// Insertar informacion de evento_tipo_entrada_vend
 	function add($data){
 		$data=array(
 			IDEVETEVE => NULL,
@@ -35,12 +35,12 @@ class Evento_tipo_entrada_vend_model extends CI_Model{
 		return $query;
 	}
 
-	// Editar informacion de evento_tipo_entrada_vendedor
+	// Editar informacion de evento_tipo_entrada_vend
 	function edit($ideveteve,$data){
 		return false;
 	}
 	
-	// Eliminar informacion de evento_tipo_entrada_vendedor
+	// Eliminar informacion de evento_tipo_entrada_vend
 	function del($ideveteve){
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,

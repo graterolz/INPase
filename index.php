@@ -28,7 +28,7 @@ define ('USUARIO_CONTROLLER','usuario');
 define ('EVENTO_CONTROLLER','evento');
 //define ('EVENTO_USUARIO_CONTROLLER','evento_usuario');
 define ('EVENTO_TIPO_ENTRADA_CONTROLLER', 'evento_tipo_entrada');
-define ('EVENTO_TIPO_ENTRADA_VENDEDOR_CONTROLLER', 'evento_tipo_entrada_vendedor');
+//define ('EVENTO_TIPO_ENTRADA_VEND_CONTROLLER', 'evento_tipo_entrada_vend');
 define ('EVENTO_ENTRADA_CONTROLLER', 'evento_entrada');
 
 // Metodos Controlador USUARIO
@@ -55,10 +55,10 @@ define ('EVENTO_TIPO_ENTRADA_ADD','evento_tipo_entrada/add');
 define ('EVENTO_TIPO_ENTRADA_EDIT','evento_tipo_entrada/edit');
 define ('EVENTO_TIPO_ENTRADA_DEL','evento_tipo_entrada/del');
 
-// Metodos Controlador EVENTO_TIPO_ENTRADA_VENDEDOR
-define ('EVENTO_TIPO_ENTRADA_VENDEDOR_ADD','evento_tipo_entrada_vendedor/add');
-define ('EVENTO_TIPO_ENTRADA_VENDEDOR_EDIT','evento_tipo_entrada_vendedor/edit');
-define ('EVENTO_TIPO_ENTRADA_VENDEDOR_DEL','evento_tipo_entrada_vendedor/del');
+// Metodos Controlador EVENTO_TIPO_ENTRADA_VEND
+define ('EVENTO_TIPO_ENTRADA_VEND_ADD','evento_tipo_entrada_vend/add');
+define ('EVENTO_TIPO_ENTRADA_VEND_EDIT','evento_tipo_entrada_vend/edit');
+define ('EVENTO_TIPO_ENTRADA_VEND_DEL','evento_tipo_entrada_vend/del');
 
 
 // Metodos Controlador EVENTO_ENTRADA
@@ -113,7 +113,7 @@ define ('DESCRIPCION','descripcion');
 define ('PRECIO','precio');
 define ('CANTIDAD','cantidad');
 
-// Campos Tabla EVENTO_TIPO_ENTRADA_VENDEDOR
+// Campos Tabla EVENTO_TIPO_ENTRADA_VEND
 define ('IDEVETEVE','ideveteve');
 define ('CANTIDAD_ENTRADA','cantidad_entrada');
 
@@ -130,7 +130,7 @@ define ('FOOTER','templates/footer');
 define ('TITULO_MENU','INPase');
 define ('TITULO_EVENTO','Informacion de Evento');
 define ('TITULO_EVENTO_TIPO_ENTRADA','Informacion de Tipos de Entradas');
-define ('TITULO_EVENTO_TIPO_ENTRADA_VENDEDOR','Informacion de  Tipos de Entradas por Vendedor');
+define ('TITULO_EVENTO_TIPO_ENTRADA_VEND','Informacion de  Tipos de Entradas por Vendedor');
 define ('TITULO_VENDEDOR','Informacion de Vendedor/s');
 define ('TITULO_PORTERO','Informacion de Portero/s');
 define ('TITULO_EVENTO_ENTRADA','Informacion de Entrada/s');
@@ -167,8 +167,8 @@ define ('SEARCH_EVENTO_ENTRADA','evento_entrada/search_evento_entrada');
 define ('ADD_EVENTO_TIPO_ENTRADA','evento_tipo_entrada/add_evento_tipo_entrada');
 define ('EDIT_EVENTO_TIPO_ENTRADA','evento_tipo_entrada/edit_evento_tipo_entrada');
 
-// Vistas EVENTO_TIPO_ENTRADA_VENDEDOR
-define ('ADD_EVENTO_TIPO_ENTRADA_VENDEDOR','evento_tipo_entrada_vendedor/add_evento_tipo_entrada_vendedor');
+// Vistas EVENTO_TIPO_ENTRADA_VEND
+define ('ADD_EVENTO_TIPO_ENTRADA_VEND','evento_tipo_entrada_vend/add_evento_tipo_entrada_vend');
 
 // Roles
 define ('ADM','ADM');

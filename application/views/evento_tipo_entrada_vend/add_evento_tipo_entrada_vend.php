@@ -154,7 +154,7 @@ if ($usuario_vendedor){
 					<div class="row">
 						<div class="col-lg-10">
 							<div class="btn btn-default">
-								<i class="fa fa-ticket fa-fw"></i><strong><?= TITULO_EVENTO_TIPO_ENTRADA_VENDEDOR; ?></strong>
+								<i class="fa fa-ticket fa-fw"></i><strong><?= TITULO_EVENTO_TIPO_ENTRADA_VEND; ?></strong>
 							</div>
 						</div>
 						<div class="col-lg-2">
