@@ -8,12 +8,11 @@ class Evento_tipo_entrada_vendedor_model extends CI_Model{
 		$this->load->database();
 	}
 
-	//
+	// Obtener informacion de evento_tipo_entrada_vendedor
 	function get($ideveteve){
 		$this->db->where(IDEVETEVE,$ideveteve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->get(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR);
-
 		if($query->num_rows()>0){
 			return $query;
 		}else{
@@ -21,7 +20,7 @@ class Evento_tipo_entrada_vendedor_model extends CI_Model{
 		}
 	}
 
-	//
+	// Insertar informacion de evento_tipo_entrada_vendedor
 	function add($data){
 		$data=array(
 			IDEVETEVE => NULL,
@@ -36,12 +35,12 @@ class Evento_tipo_entrada_vendedor_model extends CI_Model{
 		return $query;
 	}
 
-	//
+	// Editar informacion de evento_tipo_entrada_vendedor
 	function edit($ideveteve,$data){
 		return false;
 	}
 	
-	//
+	// Eliminar informacion de evento_tipo_entrada_vendedor
 	function del($ideveteve){
 		$data=array(
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ELIMINADO,

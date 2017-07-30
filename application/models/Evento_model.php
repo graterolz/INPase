@@ -13,7 +13,6 @@ class Evento_model extends CI_Model{
 		$this->db->where(IDEVE,$ideve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->get(TABLA_EVENTO);
-
 		if($query->num_rows()>0){
 			return $query;
 		}else{

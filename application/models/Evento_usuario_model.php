@@ -19,7 +19,7 @@ class Evento_usuario_model extends CI_Model{
 			return false;
 		}
 	}
-
+	
 	// Insertar informacion de evento_usuario
 	function add($data){
 		$data=array(
@@ -33,7 +33,6 @@ class Evento_usuario_model extends CI_Model{
 		$query=$this->db->insert(TABLA_EVENTO_USUARIO,$data);
 		return $query;
 	}
-	
 
 	// Editar informacion de evento_usuario
 	function edit($ideveve,$data){
@@ -58,7 +57,7 @@ class Evento_usuario_model extends CI_Model{
 		$query=$this->db->update(TABLA_EVENTO_USUARIO,$data);
 		return $query;
 	}
-	
+
 	// Reglas para formularios
 	public $evento_usuario_rules = array(
 		IDEVEVE => array(

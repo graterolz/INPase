@@ -13,7 +13,6 @@ class Evento_tipo_entrada_model extends CI_Model{
 		$this->db->where(IDEVETE,$idevete);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->get(TABLA_EVENTO_TIPO_ENTRADA);
-
 		if($query->num_rows()>0){
 			return $query;
 		}else{

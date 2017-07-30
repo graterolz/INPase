@@ -28,7 +28,6 @@ class Sys_model extends CI_Model{
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->from(TABLA_EVENTO);
 		$query=$this->db->get();
-
 		if($query->num_rows()>0){
 			return $query;
 		}else{
@@ -42,7 +41,6 @@ class Sys_model extends CI_Model{
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->from(TABLA_EVENTO_TIPO_ENTRADA);
 		$query=$this->db->get();
-
 		if($query->num_rows()>0){
 			return $query;
 		}else{
@@ -69,7 +67,6 @@ class Sys_model extends CI_Model{
 		$this->db->where(TABLA_EVENTO_USUARIO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->order_by(1,'ASC');
 		$query=$this->db->get();
-
 		if($query->num_rows()>0){
 			return $query;
 		}else{
@@ -93,7 +90,6 @@ class Sys_model extends CI_Model{
 		);
 		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA_VENDEDOR.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$this->db->order_by(1,'ASC');
-
 		$query=$this->db->get();
 		//echo $this->db->last_query();
 
@@ -150,7 +146,6 @@ class Sys_model extends CI_Model{
 		$this->db->where(IDEVEVE,$ideveve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->get(TABLA_EVENTO_USUARIO);
-
 		if($query->num_rows()>0){
 			$ideve = $query->row()->ideve;
 		}else{
@@ -171,7 +166,6 @@ class Sys_model extends CI_Model{
 				$data[]=$row[IDEVETE];
 			}
 		}else{
-			//return false;
 			$data[]=0;
 		}
 		//var_dump($data);
@@ -185,7 +179,7 @@ class Sys_model extends CI_Model{
 		$this->db->where_not_in(IDEVETE, $data);
 		$this->db->where(TABLA_EVENTO_TIPO_ENTRADA.'.'.IDEVE, $ideve);
 		$query=$this->db->get();
-		//echo $this->db->last_query();		
+		//echo $this->db->last_query();
 		if($query->num_rows()>0){
 			return $query;
 		}else{
@@ -211,8 +205,7 @@ class Sys_model extends CI_Model{
 		);
 		$this->db->order_by(1,'ASC');
 		$query=$this->db->get();
-		//echo $this->db->last_query();
-		
+		//echo $this->db->last_query();		
 		if($query->num_rows()>0){
 			return $query;
 		}else{

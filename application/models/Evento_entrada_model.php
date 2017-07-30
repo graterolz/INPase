@@ -53,7 +53,7 @@ class Evento_entrada_model extends CI_Model{
 		return $query;
 	}
 
-	// Dar acceso a entrada
+	// Dar acceso a evento_entrada
 	function access($ident){
 		$data=array(
 			ESTADO_ENTRADA => ESTADO_ENTRADA_VALIDADA
@@ -106,7 +106,7 @@ class Evento_entrada_model extends CI_Model{
 			'rules' => 'trim|required'
 		)
 	);
-
+	
 	public $evento_entrada_rules_search = array(
 		IDENT => array(
 			'field' => IDENT,
