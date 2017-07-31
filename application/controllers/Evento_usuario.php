@@ -52,6 +52,9 @@ class Evento_usuario extends CI_Controller {
 		if(!$this->session->userdata(IDUSU_SESSION)){
 			redirect(USUARIO_LOGIN, 'refresh');
 		}
+
+		$idrol = strtoupper($idrol);
+
 		if($idrol != VEND && $idrol != PORT){
 			redirect(EVENTO_CONTROLLER, 'refresh');
 		}

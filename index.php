@@ -3,7 +3,13 @@
 define ('PATH_MENU','index.php');
 define ('PATH_RESOURCES','resources/startbootstrap-sb-admin-2');
 define ('PATH_RESOURCES2','resources/imgs');
-define ('PATH_RESOURCES3','resources/bower_components');// bootstrap-datepicker-1.6.4-dist
+define ('PATH_RESOURCES3','resources/bower_components');
+
+// Roles
+define ('ADM','ADM');
+define ('ORGA','ORGA');
+define ('VEND','VEND');
+define ('PORT','PORT');
 
 // Variables de SESSION
 define ('IDUSU_SESSION','idusu_inpase');
@@ -45,8 +51,8 @@ define ('EVENTO_DEL','evento/del');
 
 // Metodos Controlador EVENTO_USUARIO
 define ('EVENTO_USUARIO_GET','evento_usuario/get');
-define ('EVENTO_USUARIO_ADD_VEND','evento_usuario/add/VEND');// /add/vend/1
-define ('EVENTO_USUARIO_ADD_PORT','evento_usuario/add/PORT');// /add/port/1
+define ('EVENTO_USUARIO_ADD_VEND','evento_usuario/add/'.strtolower(VEND));
+define ('EVENTO_USUARIO_ADD_PORT','evento_usuario/add/'.strtolower(PORT));
 define ('EVENTO_USUARIO_DEL','evento_usuario/del');
 
 // Metodos Controlador EVENTO_TIPO_ENTRADA
@@ -169,12 +175,6 @@ define ('EDIT_EVENTO_TIPO_ENTRADA','evento_tipo_entrada/edit_evento_tipo_entrada
 
 // Vistas EVENTO_TIPO_ENTRADA_VEND
 define ('ADD_EVENTO_TIPO_ENTRADA_VEND','evento_tipo_entrada_vend/add_evento_tipo_entrada_vend');
-
-// Roles
-define ('ADM','ADM');
-define ('ORGA','ORGA');
-define ('VEND','VEND');
-define ('PORT','PORT');
 
 // Formato fecha
 define ('FORMATO_FECHA_SAVE','Y-m-d H:i:s');

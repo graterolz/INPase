@@ -41,7 +41,7 @@ class Evento_entrada extends CI_Controller {
 
 		$data['evento'] = $this->Evento_model->get($ideve);
 		$data['evento_rules'] = $this->Evento_model->evento_rules;
-		$data['evento_entrada'] = $this->Sys_model->getsEntradaByEvento($ideve);
+		$data['evento_entrada'] = $this->Sys_model->getsEntradaByEvento($ideve,NULL);
 		$data['evento_entrada_rules'] = $this->Evento_entrada_model->evento_entrada_rules;
 
 		$this->load->view(HEADER);
@@ -66,9 +66,11 @@ class Evento_entrada extends CI_Controller {
 		}
 
 		$ideve = $this->Evento_usuario_model->get($ideveve)->row()->ideve;
+		$idusu = $this->Evento_usuario_model->get($ideveve)->row()->idusu;
+
 		$data['evento'] = $this->Evento_model->get($ideve);
 		$data['evento_rules'] = $this->Evento_model->evento_rules;
-		$data['evento_entrada'] = null; //$this->Sys_model->getsEntradaByEvento($ideve);
+		$data['evento_entrada'] = $this->Sys_model->getsEntradaByEvento($ideve,$idusu);
 		$data['evento_entrada_rules'] = $this->Evento_entrada_model->evento_entrada_rules;
 
 		$this->load->view(HEADER);

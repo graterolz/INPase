@@ -214,10 +214,13 @@ class Sys_model extends CI_Model{
 	}
 
 	//
-	function getsEntradaByEvento($ideve){
+	function getsEntradaByEvento($ideve,$idusu = NULL){
 		$this->db->select(TABLA_EVENTO_USUARIO.'.'.IDEVEVE);
 		$this->db->from(TABLA_EVENTO_USUARIO);
 		$this->db->where(IDEVE,$ideve);
+		if($idusu != NULL){
+			$this->db->where(IDEVE,$idusu);
+		}		
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
 		$query=$this->db->get();
 		//echo $this->db->last_query();
