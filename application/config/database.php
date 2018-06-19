@@ -82,7 +82,7 @@ $db['default'] = array(
 	'database' => 'INPASE_INPASE',
 	*/
 	'username' => 'root',
-	'password' => 'root',
+	'password' => '',
 	'database' => 'INPase',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
